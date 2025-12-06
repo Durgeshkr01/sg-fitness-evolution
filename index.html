@@ -4522,7 +4522,7 @@
                         <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                             <div class="form-group">
                                 <label for="admissionAmount"><i class="fas fa-rupee-sign"></i> Amount Paid (₹)</label>
-                                <input type="number" id="admissionAmount" placeholder="Enter amount paid" min="0">
+                                <input type="number" id="admissionAmount" placeholder="Enter amount paid" min="0" oninput="gym.calculateDuesPreview()">
                             </div>
                             <div class="form-group">
                                 <label for="admissionPaymentMode"><i class="fas fa-wallet"></i> Payment Mode</label>
@@ -4533,6 +4533,12 @@
                                     <option value="Bank Transfer">🏦 Bank Transfer</option>
                                 </select>
                             </div>
+                        </div>
+                        
+                        <!-- Dues Preview -->
+                        <div id="duesPreviewBox" style="display: none; background: linear-gradient(135deg, #ff6b6b, #ee5a24); color: white; padding: 12px 15px; border-radius: 10px; margin-bottom: 15px; font-weight: 600;">
+                            <i class="fas fa-exclamation-triangle"></i> 
+                            <span id="duesPreviewText">Dues: ₹0</span>
                         </div>
 
                         <div class="form-group">
@@ -5697,6 +5703,41 @@
                 }
             }
 
+            // Calculate and show dues preview in Add Member form
+            calculateDuesPreview() {
+                const selectedPlanId = document.getElementById('selectedPlan').value;
+                const amountPaid = parseFloat(document.getElementById('admissionAmount').value) || 0;
+                const duesPreviewBox = document.getElementById('duesPreviewBox');
+                const duesPreviewText = document.getElementById('duesPreviewText');
+                
+                if (!selectedPlanId) {
+                    duesPreviewBox.style.display = 'none';
+                    return;
+                }
+                
+                const plans = JSON.parse(localStorage.getItem('gymPlans')) || [];
+                const selectedPlan = plans.find(p => p.id == selectedPlanId);
+                
+                if (!selectedPlan) {
+                    duesPreviewBox.style.display = 'none';
+                    return;
+                }
+                
+                const planPrice = selectedPlan.price || 0;
+                const dues = Math.max(0, planPrice - amountPaid);
+                
+                if (dues > 0) {
+                    duesPreviewBox.style.display = 'block';
+                    duesPreviewText.textContent = `Dues: ₹${dues} (Plan: ₹${planPrice} - Paid: ₹${amountPaid})`;
+                } else if (amountPaid > 0) {
+                    duesPreviewBox.style.display = 'block';
+                    duesPreviewBox.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+                    duesPreviewText.innerHTML = '<i class="fas fa-check-circle"></i> Full Payment Done! No Dues';
+                } else {
+                    duesPreviewBox.style.display = 'none';
+                }
+            }
+
             setPresetDuration(days) {
                 document.getElementById('durationDays').value = days;
                 document.querySelectorAll('.duration-option').forEach(btn => btn.classList.remove('active'));
@@ -6378,6 +6419,35 @@
                 document.getElementById('payDuesModal').remove();
                 this.showMemberDetails(memberId);
 
+                // Send WhatsApp receipt message
+                const receiptDate = today.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+                let receiptMsg = `🧾 *SG FITNESS EVOLUTION*\n`;
+                receiptMsg += `━━━━━━━━━━━━━━━━━━━━\n`;
+                receiptMsg += `📋 *DUES PAYMENT RECEIPT*\n`;
+                receiptMsg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+                receiptMsg += `👤 *Member:* ${member.fullName}\n`;
+                receiptMsg += `🔢 *Roll No:* ${member.serialNumber}\n`;
+                receiptMsg += `📅 *Date:* ${receiptDate}\n\n`;
+                receiptMsg += `💰 *Payment Details:*\n`;
+                receiptMsg += `├ Previous Dues: ₹${oldDues.toLocaleString()}\n`;
+                receiptMsg += `├ Amount Paid: ₹${payAmount.toLocaleString()}\n`;
+                receiptMsg += `├ Payment Mode: ${paymentMode}\n`;
+                
+                if (member.dueAmount > 0) {
+                    receiptMsg += `└ ⚠️ *Remaining Dues: ₹${member.dueAmount.toLocaleString()}*\n\n`;
+                    receiptMsg += `🙏 Please clear remaining dues soon.\n`;
+                } else {
+                    receiptMsg += `└ ✅ *Remaining Dues: ₹0*\n\n`;
+                    receiptMsg += `🎉 *All Dues Cleared!* Thank you!\n`;
+                }
+                
+                receiptMsg += `\n━━━━━━━━━━━━━━━━━━━━\n`;
+                receiptMsg += `💪 Thank You for being with SG FITNESS!`;
+                
+                // Open WhatsApp with receipt
+                const whatsappUrl = `https://wa.me/91${member.phone}?text=${encodeURIComponent(receiptMsg)}`;
+                window.open(whatsappUrl, '_blank');
+
                 if (member.dueAmount === 0) {
                     this.showToast(`✅ All dues cleared for ${member.fullName}!`, 'success');
                 } else {
@@ -6644,12 +6714,33 @@
                     const admissionAmount = parseFloat(document.getElementById('admissionAmount').value) || 0;
                     const admissionPaymentMode = document.getElementById('admissionPaymentMode').value || 'Cash';
                     
-                    if (admissionAmount > 0) {
+                    // Get plan price to calculate dues
+                    const selectedPlanId = document.getElementById('selectedPlan').value;
+                    const plans = JSON.parse(localStorage.getItem('gymPlans')) || [];
+                    const selectedPlan = plans.find(p => p.id == selectedPlanId);
+                    const planPrice = selectedPlan ? selectedPlan.price : 0;
+                    
+                    // Calculate dues (Plan Price - Amount Paid)
+                    const dueAmount = planPrice > 0 ? Math.max(0, planPrice - admissionAmount) : 0;
+                    
+                    // Set dues on member
+                    if (dueAmount > 0) {
+                        memberData.dueAmount = dueAmount;
+                    }
+                    
+                    // Set duration days from plan
+                    if (selectedPlan && selectedPlan.days) {
+                        memberData.durationDays = selectedPlan.days;
+                    }
+                    
+                    if (admissionAmount > 0 || planPrice > 0) {
                         memberData.paymentHistory = [{
                             date: today,
                             time: currentTime,
                             timestamp: now.toISOString(),
+                            planAmount: planPrice,
                             amount: admissionAmount,
+                            dueAmount: dueAmount,
                             type: 'Admission',
                             mode: admissionPaymentMode,
                             isAdmission: true
@@ -8289,8 +8380,13 @@ Thank you for choosing us! 💪
                     
                     // Update expiry date display
                     this.updateExpiryDateDisplay();
+                    
+                    // Calculate dues preview
+                    this.calculateDuesPreview();
                 } else {
                     planInfo.style.display = 'none';
+                    // Hide dues preview when no plan selected
+                    document.getElementById('duesPreviewBox').style.display = 'none';
                 }
             }
 
