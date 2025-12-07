@@ -1948,6 +1948,7 @@
             transform: translateX(24px);
         }
 
+<<<<<<< HEAD
         /* ============ MESSAGE TEMPLATES ============ */
         .template-selector {
             display: flex;
@@ -2086,6 +2087,8 @@
             background: #e05600;
         }
 
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
         /* ============ EXPORT BUTTONS ============ */
         .export-buttons {
             display: flex;
@@ -3316,6 +3319,7 @@
             color: #94a3b8;
         }
 
+<<<<<<< HEAD
         /* Message Templates Dark Mode */
         [data-theme="dark"] .template-btn {
             background: #1a1f2e;
@@ -3369,6 +3373,8 @@
             color: white;
         }
 
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
         /* Firebase Info Box */
         [data-theme="dark"] div[style*="background: #e3f2fd"],
         [data-theme="dark"] div[style*="background:#e3f2fd"] {
@@ -3802,6 +3808,7 @@
         [data-theme="dark"] .no-results h3 {
             color: #94a3b8;
         }
+<<<<<<< HEAD
 
         /* ==================== LOGIN PAGE STYLES ==================== */
         .login-wrapper {
@@ -5073,6 +5080,12 @@
 
     <!-- ==================== ADMIN PANEL (Original Container) ==================== -->
     <div class="container" id="adminContainer" style="display: none;">
+=======
+    </style>
+</head>
+<body>
+    <div class="container">
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
         <!-- New Header with Hamburger Menu -->
         <header class="new-header">
             <div class="header-left">
@@ -5092,9 +5105,12 @@
                     <i class="fas fa-bell"></i>
                     <span class="badge" id="notificationBadge" style="display: none;">0</span>
                 </button>
+<<<<<<< HEAD
                 <button class="header-btn" onclick="logout()" title="Logout" style="background: rgba(220,53,69,0.2); color: #ff6b6b;">
                     <i class="fas fa-sign-out-alt"></i>
                 </button>
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
             </div>
         </header>
 
@@ -5138,10 +5154,13 @@
                     <i class="fas fa-share-alt"></i>
                     <span>Broadcast & Cards</span>
                 </div>
+<<<<<<< HEAD
                 <div class="side-menu-item" data-tab="templates" onclick="gym.switchTabFromMenu('templates')">
                     <i class="fas fa-envelope-open-text"></i>
                     <span>Message Templates</span>
                 </div>
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 <div class="side-menu-divider"></div>
                 <div class="side-menu-item" data-tab="plans" onclick="gym.switchTabFromMenu('plans')">
                     <i class="fas fa-cog"></i>
@@ -5586,6 +5605,7 @@
         </div>
         <!-- End Tab 4 -->
 
+<<<<<<< HEAD
         <!-- ============ TAB: MESSAGE TEMPLATES ============ -->
         <div class="tab-content" id="tab-templates">
             <div class="main-content">
@@ -5669,6 +5689,8 @@
         </div>
         <!-- End Message Templates Tab -->
 
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
         <!-- ============ TAB 5: ENQUIRY ============ -->
         <div class="tab-content" id="tab-enquiry">
             <div class="main-content">
@@ -7967,6 +7989,7 @@
                 document.getElementById('payDuesModal').remove();
                 this.showMemberDetails(memberId);
 
+<<<<<<< HEAD
                 // Check if dues fully cleared - show dues clear message option
                 if (member.dueAmount === 0) {
                     // Show dues clear message modal with WhatsApp/SMS options
@@ -7993,10 +8016,45 @@
                     
                     const whatsappUrl = `https://wa.me/91${member.mobileNumber}?text=${encodeURIComponent(receiptMsg)}`;
                     window.open(whatsappUrl, '_blank');
+=======
+                // Send WhatsApp receipt message
+                const receiptDate = today.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+                let receiptMsg = `🧾 *SG FITNESS EVOLUTION*\n`;
+                receiptMsg += `━━━━━━━━━━━━━━━━━━━━\n`;
+                receiptMsg += `📋 *DUES PAYMENT RECEIPT*\n`;
+                receiptMsg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+                receiptMsg += `👤 *Member:* ${member.fullName}\n`;
+                receiptMsg += `🔢 *Roll No:* ${member.serialNumber}\n`;
+                receiptMsg += `📅 *Date:* ${receiptDate}\n\n`;
+                receiptMsg += `💰 *Payment Details:*\n`;
+                receiptMsg += `├ Previous Dues: ₹${oldDues.toLocaleString()}\n`;
+                receiptMsg += `├ Amount Paid: ₹${payAmount.toLocaleString()}\n`;
+                receiptMsg += `├ Payment Mode: ${paymentMode}\n`;
+                
+                if (member.dueAmount > 0) {
+                    receiptMsg += `└ ⚠️ *Remaining Dues: ₹${member.dueAmount.toLocaleString()}*\n\n`;
+                    receiptMsg += `🙏 Please clear remaining dues soon.\n`;
+                } else {
+                    receiptMsg += `└ ✅ *Remaining Dues: ₹0*\n\n`;
+                    receiptMsg += `🎉 *All Dues Cleared!* Thank you!\n`;
+                }
+                
+                receiptMsg += `\n━━━━━━━━━━━━━━━━━━━━\n`;
+                receiptMsg += `💪 Thank You for being with SG FITNESS!`;
+                
+                // Open WhatsApp with receipt
+                const whatsappUrl = `https://wa.me/91${member.phone}?text=${encodeURIComponent(receiptMsg)}`;
+                window.open(whatsappUrl, '_blank');
+
+                if (member.dueAmount === 0) {
+                    this.showToast(`✅ All dues cleared for ${member.fullName}!`, 'success');
+                } else {
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                     this.showToast(`✅ ₹${payAmount} dues paid! Remaining: ₹${member.dueAmount}`, 'success');
                 }
             }
 
+<<<<<<< HEAD
             // Show modal with options to send Dues Clear message
             showDuesClearMessageModal(member, amount) {
                 const existingModal = document.getElementById('duesClearMessageModal');
@@ -8033,6 +8091,8 @@
                 document.body.appendChild(modal);
             }
 
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
             editExpiryDate(memberId) {
                 const member = this.members.find(m => m.id === memberId);
                 if (!member) return;
@@ -8422,6 +8482,7 @@
                 }
                 const formattedPhone = '91' + cleanPhone;
                 
+<<<<<<< HEAD
                 const today = new Date().toLocaleDateString('en-IN');
                 const validDate = new Date(validTill);
                 const formattedValidTill = validDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -8434,6 +8495,37 @@
                     joinDate: today,
                     validTill: formattedValidTill
                 });
+=======
+                const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
+                const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
+                const gymPhone = settings.phone || '9876543210';
+                const gymAddress = settings.address || 'Your Gym Address';
+                const today = new Date().toLocaleDateString('en-IN');
+                
+                // Format valid till date
+                const validDate = new Date(validTill);
+                const formattedValidTill = validDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+
+                const message = `🏋️ *${gymName}*
+
+🎉 *Welcome to our Gym Family!*
+
+Namaste *${name}* Ji! 🙏
+
+Thank you for joining us! 💪
+
+*Your Details:*
+📋 Roll No: ${rollNo}
+📅 Join Date: ${today}
+📅 Valid Till: ${formattedValidTill}
+
+Aapka aur aapki family ka swasthya humesha achha rahe! Stay fit, stay healthy! 🌟
+
+📍 ${gymAddress}
+📞 ${gymPhone}
+
+*Welcome aboard!* 💪🔥`;
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -8451,6 +8543,7 @@
                     cleanPhone = cleanPhone.slice(-10);
                 }
                 
+<<<<<<< HEAD
                 const today = new Date().toLocaleDateString('en-IN');
                 const validDate = new Date(validTill);
                 const formattedValidTill = validDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -8465,6 +8558,30 @@
                 });
                 // Remove emojis and * for SMS
                 message = message.replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]/gu, '').replace(/\*/g, '');
+=======
+                const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
+                const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
+                const gymPhone = settings.phone || '9876543210';
+                const today = new Date().toLocaleDateString('en-IN');
+                
+                // Format valid till date
+                const validDate = new Date(validTill);
+                const formattedValidTill = validDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+
+                const message = `Welcome to ${gymName}!
+
+Namaste ${name} Ji!
+
+Thank you for joining us!
+
+Roll No: ${rollNo}
+Join Date: ${today}
+Valid Till: ${formattedValidTill}
+
+Aapka aur aapki family ka swasthya humesha achha rahe! Stay fit!
+
+Contact: ${gymPhone}`;
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
 
                 const smsUrl = `sms:${cleanPhone}?body=${encodeURIComponent(message)}`;
                 window.open(smsUrl, '_blank');
@@ -8483,8 +8600,11 @@
                     return;
                 }
 
+<<<<<<< HEAD
                 // Mark member as deleted for extra safety (in case of stale localStorage)
                 member.isDeleted = true;
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 this.members = this.members.filter(m => m.id !== memberId);
                 this.saveToLocalStorage();
                 this.autoSyncToCloud(); // Auto sync to cloud
@@ -9028,10 +9148,18 @@
                 if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
                 const formattedPhone = '91' + cleanPhone;
                 
+<<<<<<< HEAD
+=======
+                const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
+                const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
+                const gymPhone = settings.phone || '9876543210';
+                const gymAddress = settings.address || 'Your Gym Address';
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 const today = new Date().toLocaleDateString('en-IN');
                 const timeStr = time ? ` at ${time}` : '';
                 const formattedValidTill = new Date(validTill).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 
+<<<<<<< HEAD
                 // Use template system
                 const message = this.applyTemplate('bill', {
                     name: name,
@@ -9042,6 +9170,23 @@
                     validTill: formattedValidTill,
                     joinDate: today + timeStr
                 });
+=======
+                const message = `🧾 *PAYMENT RECEIPT*
+
+🏋️ *${gymName}*
+${gymAddress}
+
+*Roll No:* ${rollNo}
+*Name:* ${name}
+*Date:* ${today}${timeStr}
+
+*Plan:* ${days} Days
+*Amount Paid:* Rs.${amount}
+*Valid Till:* ${formattedValidTill}
+
+Thank you for choosing us! 💪
+📞 ${gymPhone}`;
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -9052,10 +9197,16 @@
                 let cleanPhone = mobile.replace(/\D/g, '');
                 if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
                 
+<<<<<<< HEAD
+=======
+                const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
+                const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 const today = new Date().toLocaleDateString('en-IN');
                 const timeStr = time ? ` at ${time}` : '';
                 const formattedValidTill = new Date(validTill).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 
+<<<<<<< HEAD
                 // Use template system - remove emojis for SMS
                 let message = this.applyTemplate('bill', {
                     name: name,
@@ -9069,6 +9220,11 @@
                 message = message.replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]/gu, '').replace(/\*/g, '');
                 
                 const smsUrl = `sms:${cleanPhone}?body=${encodeURIComponent(message)}`;
+=======
+                const smsMessage = `PAYMENT RECEIPT - ${gymName}. Roll No: ${rollNo}, Name: ${name}, Date: ${today}${timeStr}, Plan: ${days} Days, Amount: Rs.${amount}, Valid Till: ${formattedValidTill}. Thank you!`;
+                
+                const smsUrl = `sms:${cleanPhone}?body=${encodeURIComponent(smsMessage)}`;
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 window.open(smsUrl, '_blank');
                 this.showToast('Opening SMS with bill...');
             }
@@ -9205,9 +9361,13 @@
                         this.loadPlans();
                         this.loadSettings();
                         break;
+<<<<<<< HEAD
                     case 'templates':
                         this.loadTemplateEditor();
                         break;
+=======
+                    
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                     case 'media':
                         this.updateVisitingCard();
                         break;
@@ -10041,6 +10201,7 @@
                 this.showToast('Settings saved!');
             }
 
+<<<<<<< HEAD
             // ============ MESSAGE TEMPLATES ============
             currentTemplateType = 'welcome';
             
@@ -10301,6 +10462,8 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 return template;
             }
 
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
             // ============ CAPACITY TRACKER ============
             loadCapacityData() {
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || { maxCapacity: 50 };
@@ -12547,6 +12710,13 @@ Thank you! 🙏`;
                 if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
                 const formattedPhone = '91' + cleanPhone;
                 
+<<<<<<< HEAD
+=======
+                const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
+                const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
+                const gymPhone = settings.phone || '9876543210';
+                
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 const expDate = new Date(expiryDate);
                 const today = new Date();
                 const diffDays = Math.ceil((expDate - today) / (1000 * 60 * 60 * 24));
@@ -12561,6 +12731,7 @@ Thank you! 🙏`;
                     statusText = `expires in ${diffDays} days`;
                 }
                 
+<<<<<<< HEAD
                 // Use template system
                 const message = this.applyTemplate('expiry', {
                     name: name,
@@ -12568,6 +12739,23 @@ Thank you! 🙏`;
                     validTill: formattedExpiry,
                     statusText: statusText
                 });
+=======
+                const message = `🏋️ *${gymName}*
+
+Dear *${name}*,
+
+This is a friendly reminder that your gym membership ${statusText}.
+
+📅 Expiry Date: ${formattedExpiry}
+
+Please renew your membership to continue enjoying our facilities and services.
+
+💪 Stay Fit, Stay Healthy!
+
+📞 Contact: ${gymPhone}
+
+Thank you! 🙏`;
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -12648,12 +12836,32 @@ Thank you! 🙏`;
 
             sendBirthdayWish(mobile, name) {
                 const formattedPhone = this.formatPhoneNumber(mobile);
+<<<<<<< HEAD
                 
                 // Use template system
                 const message = this.applyTemplate('birthday', {
                     name: name,
                     mobile: mobile
                 });
+=======
+                const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
+                const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
+                
+                const message = `🎂 *Happy Birthday ${name}!* 🎉
+
+🏋️ *${gymName}* wishes you a very Happy Birthday!
+
+May this special day bring you:
+✨ Good Health
+💪 Strength & Fitness
+🌟 Success in all your goals
+
+Stay fit, stay healthy! 
+Have a wonderful year ahead! 🎊
+
+With best wishes,
+Team ${gymName} 💪`;
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -12662,6 +12870,7 @@ Thank you! 🙏`;
 
             sendBirthdaySMS(mobile, name) {
                 const formattedPhone = this.formatPhoneNumber(mobile);
+<<<<<<< HEAD
                 
                 // Use template system - remove emojis for SMS
                 let message = this.applyTemplate('birthday', {
@@ -12671,10 +12880,19 @@ Thank you! 🙏`;
                 message = message.replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]/gu, '').replace(/\*/g, '');
                 
                 const smsUrl = `sms:${formattedPhone}?body=${encodeURIComponent(message)}`;
+=======
+                const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
+                const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
+                
+                const smsMessage = `Happy Birthday ${name}! ${gymName} wishes you good health, strength & fitness. Stay fit, stay healthy! Have a wonderful year ahead!`;
+                
+                const smsUrl = `sms:${formattedPhone}?body=${encodeURIComponent(smsMessage)}`;
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 window.open(smsUrl, '_blank');
                 this.showToast('Opening SMS with birthday wish...');
             }
 
+<<<<<<< HEAD
             // ============ DUES CLEAR MESSAGE ============
             sendDuesClearWhatsApp(mobile, name, rollNo, amount, validTill) {
                 let cleanPhone = mobile.replace(/\D/g, '');
@@ -12724,6 +12942,8 @@ Thank you! 🙏`;
                 this.showToast('Opening SMS with dues clear message...');
             }
 
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
             saveFirebaseConfig() {
                 const apiKey = document.getElementById('firebaseApiKey').value.trim();
                 const projectId = document.getElementById('firebaseProjectId').value.trim();
@@ -12770,6 +12990,7 @@ Thank you! 🙏`;
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
+<<<<<<< HEAD
             // Show install buttons when install is available
             showInstallButtons();
         });
@@ -12840,6 +13061,8 @@ Thank you! 🙏`;
         // Check on page load
         document.addEventListener('DOMContentLoaded', () => {
             checkIfInstalled();
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
         });
 
         function installApp() {
@@ -12860,6 +13083,7 @@ Thank you! 🙏`;
                       '📌 Android Chrome: Menu → "Add to Home Screen"');
             }
         }
+<<<<<<< HEAD
 
         // ==================== LOGIN SYSTEM FUNCTIONS ====================
         
@@ -13358,6 +13582,8 @@ Thank you! 🙏`;
         });
 
         // ==================== END LOGIN SYSTEM FUNCTIONS ====================
+=======
+>>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
     </script>
 </body>
 </html>

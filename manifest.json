@@ -2,7 +2,7 @@
     "name": "SG FITNESS EVOLUTION",
     "short_name": "SG FITNESS",
     "description": "Gym Member Management App - Fitness Evolution",
-    "version": "1.1",
+    "version": "1.2",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#000000",
