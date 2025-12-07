@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1543,7 +1543,6 @@
             color: var(--success) !important;
         }
 
-        /* ============ NAVIGATION TABS ============ */
         .nav-tabs {
             display: flex;
             background: #f8f9fa;
@@ -1588,7 +1587,6 @@
             display: block;
         }
 
-        /* ============ TODAY'S SUMMARY SECTION ============ */
         .summary-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1620,7 +1618,6 @@
             color: var(--dark);
         }
 
-        /* ============ DATA TABLES ============ */
         .data-table {
             width: 100%;
             border-collapse: collapse;
@@ -1658,7 +1655,6 @@
         .badge-warning { background: #fff3cd; color: #856404; }
         .badge-danger { background: #f8d7da; color: #721c24; }
 
-        /* ============ FILTER BAR ============ */
         .filter-bar {
             display: flex;
             gap: 15px;
@@ -1682,7 +1678,6 @@
             border-color: var(--primary);
         }
 
-        /* ============ PLANS GRID ============ */
         .plans-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1743,7 +1738,6 @@
             margin-right: 10px;
         }
 
-        /* ============ CAPACITY TRACKER ============ */
         .capacity-display {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -1793,7 +1787,6 @@
         .capacity-fill.warning { background: var(--warning); }
         .capacity-fill.danger { background: var(--danger); }
 
-        /* ============ VISITING CARD ============ */
         .visiting-card-preview {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: white;
@@ -1862,7 +1855,6 @@
             cursor: pointer;
         }
 
-        /* ============ SETTINGS FORM ============ */
         .settings-section {
             background: white;
             padding: 25px;
@@ -1948,8 +1940,6 @@
             transform: translateX(24px);
         }
 
-<<<<<<< HEAD
-        /* ============ MESSAGE TEMPLATES ============ */
         .template-selector {
             display: flex;
             gap: 10px;
@@ -2087,9 +2077,6 @@
             background: #e05600;
         }
 
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
-        /* ============ EXPORT BUTTONS ============ */
         .export-buttons {
             display: flex;
             gap: 10px;
@@ -2123,7 +2110,6 @@
             box-shadow: 0 3px 8px rgba(0,0,0,0.2);
         }
 
-        /* ============ EMPTY STATE ============ */
         .empty-state {
             text-align: center;
             padding: 40px;
@@ -2136,7 +2122,6 @@
             opacity: 0.5;
         }
 
-        /* ============ HAMBURGER MENU & SIDE PANEL ============ */
         .new-header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -2906,7 +2891,6 @@
             border-bottom-color: var(--primary);
         }
 
-        /* ============ ATTENDANCE SYSTEM STYLES ============ */
         .attendance-header {
             margin-bottom: 25px;
         }
@@ -3319,7 +3303,6 @@
             color: #94a3b8;
         }
 
-<<<<<<< HEAD
         /* Message Templates Dark Mode */
         [data-theme="dark"] .template-btn {
             background: #1a1f2e;
@@ -3373,8 +3356,6 @@
             color: white;
         }
 
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
         /* Firebase Info Box */
         [data-theme="dark"] div[style*="background: #e3f2fd"],
         [data-theme="dark"] div[style*="background:#e3f2fd"] {
@@ -3808,9 +3789,6 @@
         [data-theme="dark"] .no-results h3 {
             color: #94a3b8;
         }
-<<<<<<< HEAD
-
-        /* ==================== LOGIN PAGE STYLES ==================== */
         .login-wrapper {
             min-height: 100vh;
             display: flex;
@@ -4306,7 +4284,6 @@
             display: none !important;
         }
 
-        /* ==================== ATTRACTIVE MEMBER PANEL STYLES ==================== */
         .member-panel-container {
             display: none;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -4462,7 +4439,7 @@
         }
 
         .member-welcome-card::before {
-            content: '💪';
+            content: 'ðŸ’ª';
             position: absolute;
             right: -20px;
             top: -20px;
@@ -4818,18 +4795,14 @@
             font-weight: 700;
         }
 
-        /* ==================== END ATTRACTIVE MEMBER PANEL STYLES ==================== */
 
-        /* ==================== END LOGIN PAGE STYLES ==================== */
     </style>
 </head>
 <body>
-    <!-- ==================== FLOATING INSTALL BUTTON ==================== -->
     <button class="floating-install-btn hidden" id="floatingInstallBtn" onclick="installAppNow()">
         <i class="fas fa-download"></i> Install App
     </button>
 
-    <!-- ==================== LOGIN PAGE ==================== -->
     <div class="login-wrapper" id="loginWrapper">
         <div class="login-container">
             <!-- Install App Banner -->
@@ -4837,7 +4810,7 @@
                 <div class="install-text">
                     <i class="fas fa-mobile-alt"></i>
                     <div>
-                        <h4>📲 Install App on Your Phone</h4>
+                        <h4>ðŸ“² Install App on Your Phone</h4>
                         <p>Quick access from home screen</p>
                     </div>
                 </div>
@@ -4897,13 +4870,11 @@
             </div>
 
             <div class="login-footer">
-                <p>© 2024 SG FITNESS EVOLUTION</p>
+                <p>Â© 2024 SG FITNESS EVOLUTION</p>
             </div>
         </div>
     </div>
-    <!-- ==================== END LOGIN PAGE ==================== -->
 
-    <!-- ==================== MEMBER PANEL ==================== -->
     <div class="member-panel-container" id="memberPanelContainer">
         <div class="member-panel-header">
             <h2><i class="fas fa-dumbbell"></i> <span id="memberWelcomeName">Member Panel</span></h2>
@@ -4914,7 +4885,7 @@
 
         <!-- Motivational Quote Banner -->
         <div class="motivation-banner" id="motivationBanner">
-            <div class="quote-icon">🔥</div>
+            <div class="quote-icon">ðŸ”¥</div>
             <div class="quote-text" id="quoteText">"The only bad workout is the one that didn't happen."</div>
             <div class="quote-author" id="quoteAuthor">- Stay Motivated!</div>
         </div>
@@ -4945,10 +4916,10 @@
             <div class="member-section active" id="memberDashboard">
                 <!-- Welcome Card -->
                 <div class="member-welcome-card">
-                    <div class="greeting" id="greetingText">Good Morning! 🌅</div>
+                    <div class="greeting" id="greetingText">Good Morning! ðŸŒ…</div>
                     <div class="member-name" id="dashboardMemberName">Welcome!</div>
-                    <div class="roll-no">🎫 Roll No: <span id="dashboardRollNo">-</span></div>
-                    <div class="status-pill active" id="dashboardStatus">✅ Active</div>
+                    <div class="roll-no">ðŸŽ« Roll No: <span id="dashboardRollNo">-</span></div>
+                    <div class="status-pill active" id="dashboardStatus">âœ… Active</div>
                 </div>
 
                 <!-- Stats Grid -->
@@ -4970,14 +4941,14 @@
                     </div>
                     <div class="member-stat-card">
                         <div class="stat-icon red"><i class="fas fa-rupee-sign"></i></div>
-                        <div class="stat-value" id="dashboardDues">₹0</div>
+                        <div class="stat-value" id="dashboardDues">â‚¹0</div>
                         <div class="stat-label">Dues</div>
                     </div>
                 </div>
 
                 <!-- Streak Card -->
                 <div class="streak-card" id="streakCard">
-                    <div class="streak-fire">🔥</div>
+                    <div class="streak-fire">ðŸ”¥</div>
                     <div class="streak-info">
                         <h4>Your Gym Streak!</h4>
                         <div class="streak-count"><span id="streakCount">0</span> Days</div>
@@ -4986,7 +4957,7 @@
 
                 <!-- Today's Fitness Tip -->
                 <div class="tip-card">
-                    <div class="tip-icon">💡</div>
+                    <div class="tip-icon">ðŸ’¡</div>
                     <div class="tip-content">
                         <h4>Today's Fitness Tip</h4>
                         <p id="fitnessTip">Drink at least 8 glasses of water daily to stay hydrated during workouts!</p>
@@ -5018,7 +4989,7 @@
                 <div class="member-profile-card">
                     <div class="member-profile-header">
                         <h3 id="profileMemberName">Member Name</h3>
-                        <p>Fitness Enthusiast 💪</p>
+                        <p>Fitness Enthusiast ðŸ’ª</p>
                     </div>
                     <div class="member-info-grid" id="profileDetails">
                         <!-- Profile details will be loaded here -->
@@ -5049,7 +5020,7 @@
                     <div style="text-align: center; color: #94a3b8;">
                         <i class="fas fa-dumbbell" style="font-size: 3rem; margin-bottom: 15px; color: #10b981;"></i>
                         <p>No workout plan assigned yet.</p>
-                        <p style="font-size: 0.9rem; margin-top: 10px;">Contact your trainer to get a personalized plan! 💪</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">Contact your trainer to get a personalized plan! ðŸ’ª</p>
                     </div>
                 </div>
             </div>
@@ -5059,7 +5030,7 @@
                 <div class="gym-info-card">
                     <img src="logo.png" alt="Gym Logo" onerror="this.src='https://via.placeholder.com/100?text=GYM'">
                     <h3 id="gymInfoName">SG FITNESS EVOLUTION</h3>
-                    <p id="gymInfoAddress">Your Fitness Destination 🏋️</p>
+                    <p id="gymInfoAddress">Your Fitness Destination ðŸ‹ï¸</p>
                     <div class="gym-contact-item" id="gymInfoPhone">
                         <i class="fas fa-phone"></i>
                         <span>Contact: -</span>
@@ -5070,22 +5041,18 @@
                     </div>
                     <div class="gym-contact-item">
                         <i class="fas fa-heart"></i>
-                        <span>Train Hard, Stay Strong! 💪</span>
+                        <span>Train Hard, Stay Strong! ðŸ’ª</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ==================== END MEMBER PANEL ==================== -->
 
-    <!-- ==================== ADMIN PANEL (Original Container) ==================== -->
     <div class="container" id="adminContainer" style="display: none;">
-=======
     </style>
 </head>
 <body>
     <div class="container">
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
         <!-- New Header with Hamburger Menu -->
         <header class="new-header">
             <div class="header-left">
@@ -5105,12 +5072,9 @@
                     <i class="fas fa-bell"></i>
                     <span class="badge" id="notificationBadge" style="display: none;">0</span>
                 </button>
-<<<<<<< HEAD
                 <button class="header-btn" onclick="logout()" title="Logout" style="background: rgba(220,53,69,0.2); color: #ff6b6b;">
                     <i class="fas fa-sign-out-alt"></i>
                 </button>
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
             </div>
         </header>
 
@@ -5154,13 +5118,10 @@
                     <i class="fas fa-share-alt"></i>
                     <span>Broadcast & Cards</span>
                 </div>
-<<<<<<< HEAD
                 <div class="side-menu-item" data-tab="templates" onclick="gym.switchTabFromMenu('templates')">
                     <i class="fas fa-envelope-open-text"></i>
                     <span>Message Templates</span>
                 </div>
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 <div class="side-menu-divider"></div>
                 <div class="side-menu-item" data-tab="plans" onclick="gym.switchTabFromMenu('plans')">
                     <i class="fas fa-cog"></i>
@@ -5198,7 +5159,7 @@
                 <span class="stat-label">Active</span>
             </div>
             <div class="stat-card-inline" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border-color: #f87171;">
-                <span class="stat-value" id="totalDues" style="color: #dc2626;">₹0</span>
+                <span class="stat-value" id="totalDues" style="color: #dc2626;">â‚¹0</span>
                 <span class="stat-label" style="color: #991b1b;">Total Dues</span>
             </div>
         </div>
@@ -5233,7 +5194,6 @@
         </div>
         </nav>
 
-        <!-- ============ TAB 1: MEMBERS (Original Main Content) ============ -->
         <div class="tab-content active" id="tab-members">
             <!-- Search and Action Buttons -->
             <div class="search-section">
@@ -5287,7 +5247,6 @@
         </div>
         <!-- End Tab 1: Members -->
 
-        <!-- ============ TAB: ATTENDANCE ============ -->
         <div class="tab-content" id="tab-attendance">
             <div class="main-content">
                 <h2 style="margin-bottom: 20px;"><i class="fas fa-clipboard-check"></i> Attendance System</h2>
@@ -5365,7 +5324,6 @@
         </div>
         <!-- End Tab: Attendance -->
 
-        <!-- ============ TAB 2: TODAY'S SUMMARY ============ -->
         <div class="tab-content" id="tab-today">
             <div class="main-content">
                 <h2 style="margin-bottom: 20px;"><i class="fas fa-calendar-day"></i> Today's Check-in & Payment Summary</h2>
@@ -5378,7 +5336,7 @@
                     </div>
                     <div class="summary-card">
                         <h3><i class="fas fa-rupee-sign"></i> Today's Collection</h3>
-                        <div class="value" id="todayCollection">₹0</div>
+                        <div class="value" id="todayCollection">â‚¹0</div>
                     </div>
                     <div class="summary-card warning">
                         <h3><i class="fas fa-user-plus"></i> New Admissions</h3>
@@ -5413,7 +5371,6 @@
         </div>
         <!-- End Tab 2 -->
 
-        <!-- ============ TAB 3: PAYMENT HISTORY ============ -->
         <div class="tab-content" id="tab-payments">
             <div class="main-content">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
@@ -5479,13 +5436,12 @@
 
                 <div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 10px;">
                     <strong>Total Collection (Filtered): </strong>
-                    <span id="filteredTotalCollection" style="font-size: 1.5rem; color: var(--success);">₹0</span>
+                    <span id="filteredTotalCollection" style="font-size: 1.5rem; color: var(--success);">â‚¹0</span>
                 </div>
             </div>
         </div>
         <!-- End Tab 3 -->
 
-        <!-- ============ TAB 4: PLANS & SETTINGS ============ -->
         <div class="tab-content" id="tab-plans">
             <div class="main-content">
                 <h2 style="margin-bottom: 25px;"><i class="fas fa-cog"></i> Custom Plans & Gym Settings</h2>
@@ -5593,9 +5549,9 @@
                         <ol style="margin: 10px 0 0 20px; font-size: 0.9rem;">
                             <li>Go to <a href="https://console.firebase.google.com" target="_blank">Firebase Console</a></li>
                             <li>Create a new project (free)</li>
-                            <li>Go to Project Settings → General → Your apps → Add Web app</li>
+                            <li>Go to Project Settings â†’ General â†’ Your apps â†’ Add Web app</li>
                             <li>Copy API Key and Project ID</li>
-                            <li>Go to Realtime Database → Create Database → Start in Test Mode</li>
+                            <li>Go to Realtime Database â†’ Create Database â†’ Start in Test Mode</li>
                             <li>Copy the Database URL</li>
                             <li>Paste all values here and click Save</li>
                         </ol>
@@ -5605,13 +5561,11 @@
         </div>
         <!-- End Tab 4 -->
 
-<<<<<<< HEAD
-        <!-- ============ TAB: MESSAGE TEMPLATES ============ -->
         <div class="tab-content" id="tab-templates">
             <div class="main-content">
                 <h2 style="margin-bottom: 25px;"><i class="fas fa-envelope-open-text"></i> Message Templates</h2>
                 <p style="color: var(--gray); margin-bottom: 20px; font-size: 1rem;">
-                    📝 यहाँ से आप सभी messages को अपने हिसाब से edit कर सकते हैं। Variables use करें जो automatically replace हो जाएंगे।
+                    ðŸ“ à¤¯à¤¹à¤¾à¤ à¤¸à¥‡ à¤†à¤ª à¤¸à¤­à¥€ messages à¤•à¥‹ à¤…à¤ªà¤¨à¥‡ à¤¹à¤¿à¤¸à¤¾à¤¬ à¤¸à¥‡ edit à¤•à¤° à¤¸à¤•à¤¤à¥‡ à¤¹à¥ˆà¤‚à¥¤ Variables use à¤•à¤°à¥‡à¤‚ à¤œà¥‹ automatically replace à¤¹à¥‹ à¤œà¤¾à¤à¤‚à¤—à¥‡à¥¤
                 </p>
                 
                 <!-- Template Type Selector -->
@@ -5642,7 +5596,7 @@
                         <i class="fas fa-edit" style="color: var(--primary); margin-right: 8px;"></i>
                         <span id="currentTemplateLabel">Welcome Message Template</span>
                     </label>
-                    <textarea class="template-textarea" id="templateTextarea" placeholder="Message template यहाँ लिखें..."></textarea>
+                    <textarea class="template-textarea" id="templateTextarea" placeholder="Message template à¤¯à¤¹à¤¾à¤ à¤²à¤¿à¤–à¥‡à¤‚..."></textarea>
                     
                     <!-- Variables Info -->
                     <div class="template-variables">
@@ -5677,21 +5631,18 @@
 
                 <!-- Quick Info Box -->
                 <div style="margin-top: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 15px; color: white;">
-                    <h3 style="margin: 0 0 15px; font-size: 1.1rem;"><i class="fas fa-lightbulb"></i> कैसे Use करें?</h3>
+                    <h3 style="margin: 0 0 15px; font-size: 1.1rem;"><i class="fas fa-lightbulb"></i> à¤•à¥ˆà¤¸à¥‡ Use à¤•à¤°à¥‡à¤‚?</h3>
                     <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                        <li>ऊपर से message type select करें (Welcome, Bill, Birthday, etc.)</li>
-                        <li>Message edit करें - Variables जैसे <code style="background: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px;">{name}</code> use करें</li>
-                        <li><strong>Save Template</strong> button दबाएं</li>
-                        <li>अब से वही message जाएगा! 🎉</li>
+                        <li>à¤Šà¤ªà¤° à¤¸à¥‡ message type select à¤•à¤°à¥‡à¤‚ (Welcome, Bill, Birthday, etc.)</li>
+                        <li>Message edit à¤•à¤°à¥‡à¤‚ - Variables à¤œà¥ˆà¤¸à¥‡ <code style="background: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px;">{name}</code> use à¤•à¤°à¥‡à¤‚</li>
+                        <li><strong>Save Template</strong> button à¤¦à¤¬à¤¾à¤à¤‚</li>
+                        <li>à¤…à¤¬ à¤¸à¥‡ à¤µà¤¹à¥€ message à¤œà¤¾à¤à¤—à¤¾! ðŸŽ‰</li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- End Message Templates Tab -->
 
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
-        <!-- ============ TAB 5: ENQUIRY ============ -->
         <div class="tab-content" id="tab-enquiry">
             <div class="main-content">
                 <h2 style="margin-bottom: 25px;"><i class="fas fa-user-clock"></i> Enquiry Management</h2>
@@ -5748,7 +5699,6 @@
         </div>
         <!-- End Enquiry Tab -->
 
-        <!-- ============ TAB 6: DIGITAL CARD & BROADCAST ============ -->
         <div class="tab-content" id="tab-media">
             <div class="main-content">
                 <h2 style="margin-bottom: 25px;"><i class="fas fa-share-alt"></i> Digital Visiting Card & Media Broadcast</h2>
@@ -5854,7 +5804,6 @@
         </div>
         <!-- End Tab 6 -->
 
-        <!-- ============ TAB 7: WORKOUT & DIET PLANS ============ -->
         <div class="tab-content" id="tab-workout">
             <div class="main-content">
                 <h2 style="margin-bottom: 25px;"><i class="fas fa-dumbbell"></i> Workout & Diet Plans</h2>
@@ -6000,7 +5949,7 @@
                         <input type="number" id="newPlanDays" placeholder="30" min="1">
                     </div>
                     <div class="form-group">
-                        <label>Price (₹)</label>
+                        <label>Price (â‚¹)</label>
                         <input type="number" id="newPlanPrice" placeholder="500" min="1">
                     </div>
                     <div class="form-group">
@@ -6091,16 +6040,16 @@
                         <!-- Payment Section for New Member -->
                         <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                             <div class="form-group">
-                                <label for="admissionAmount"><i class="fas fa-rupee-sign"></i> Amount Paid (₹)</label>
+                                <label for="admissionAmount"><i class="fas fa-rupee-sign"></i> Amount Paid (â‚¹)</label>
                                 <input type="number" id="admissionAmount" placeholder="Enter amount paid" min="0" oninput="gym.calculateDuesPreview()">
                             </div>
                             <div class="form-group">
                                 <label for="admissionPaymentMode"><i class="fas fa-wallet"></i> Payment Mode</label>
                                 <select id="admissionPaymentMode">
-                                    <option value="Cash">💵 Cash</option>
-                                    <option value="UPI">📱 UPI</option>
-                                    <option value="Card">💳 Card</option>
-                                    <option value="Bank Transfer">🏦 Bank Transfer</option>
+                                    <option value="Cash">ðŸ’µ Cash</option>
+                                    <option value="UPI">ðŸ“± UPI</option>
+                                    <option value="Card">ðŸ’³ Card</option>
+                                    <option value="Bank Transfer">ðŸ¦ Bank Transfer</option>
                                 </select>
                             </div>
                         </div>
@@ -6108,7 +6057,7 @@
                         <!-- Dues Preview -->
                         <div id="duesPreviewBox" style="display: none; background: linear-gradient(135deg, #ff6b6b, #ee5a24); color: white; padding: 12px 15px; border-radius: 10px; margin-bottom: 15px; font-weight: 600;">
                             <i class="fas fa-exclamation-triangle"></i> 
-                            <span id="duesPreviewText">Dues: ₹0</span>
+                            <span id="duesPreviewText">Dues: â‚¹0</span>
                         </div>
 
                         <div class="form-group">
@@ -6445,7 +6394,7 @@
                 <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4CAF50, #8BC34A); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
                     <i class="fas fa-sync-alt" style="font-size: 2.5rem; color: white;"></i>
                 </div>
-                <h2 style="color: #333; margin-bottom: 10px;">🎉 Update Available!</h2>
+                <h2 style="color: #333; margin-bottom: 10px;">ðŸŽ‰ Update Available!</h2>
                 <p style="color: #666; margin-bottom: 25px; font-size: 1rem;">A new version of SG FITNESS EVOLUTION is available with new features and improvements!</p>
                 <button onclick="updateApp()" style="background: linear-gradient(135deg, #4CAF50, #8BC34A); color: white; border: none; padding: 15px 40px; border-radius: 30px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; box-shadow: 0 4px 15px rgba(76,175,80,0.4);">
                     <i class="fas fa-download"></i> Update Now
@@ -7298,7 +7247,7 @@
                 
                 if (dues > 0) {
                     duesPreviewBox.style.display = 'block';
-                    duesPreviewText.textContent = `Dues: ₹${dues} (Plan: ₹${planPrice} - Paid: ₹${amountPaid})`;
+                    duesPreviewText.textContent = `Dues: â‚¹${dues} (Plan: â‚¹${planPrice} - Paid: â‚¹${amountPaid})`;
                 } else if (amountPaid > 0) {
                     duesPreviewBox.style.display = 'block';
                     duesPreviewBox.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
@@ -7543,8 +7492,8 @@
                             <div class="member-header">
                                 <span class="member-id">${member.serialNumber}</span>
                                 <div style="display: flex; gap: 8px; align-items: center;">
-                                    ${isCheckedIn ? '<span style="background: #22c55e; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">🏃 IN GYM</span>' : ''}
-                                    ${hasDues ? `<span class="dues-badge" style="background: var(--danger); color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">₹${member.dueAmount.toLocaleString()} Due</span>` : ''}
+                                    ${isCheckedIn ? '<span style="background: #22c55e; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">ðŸƒ IN GYM</span>' : ''}
+                                    ${hasDues ? `<span class="dues-badge" style="background: var(--danger); color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">â‚¹${member.dueAmount.toLocaleString()} Due</span>` : ''}
                                     <span class="status-badge ${statusClass}">
                                         ${statusText}
                                     </span>
@@ -7564,7 +7513,7 @@
                                     <span class="info-label">Expiry:</span>
                                     <span class="info-value ${isExpiring ? 'text-warning' : ''} ${isExpired ? 'text-danger' : ''}">
                                         ${this.formatDate(member.expiryDate)}
-                                        ${isExpiring ? ' ⚠️' : ''}
+                                        ${isExpiring ? ' âš ï¸' : ''}
                                     </span>
                                 </div>
                                 <div class="info-row">
@@ -7595,7 +7544,7 @@
                                 </button>
                                 ${hasDues ? `
                                 <button class="action-btn" onclick="gym.payDuesOnly(${member.id})" style="background: linear-gradient(135deg, #28a745, #20c997); color: white;">
-                                    <i class="fas fa-money-bill-wave"></i> Pay Dues (₹${member.dueAmount})
+                                    <i class="fas fa-money-bill-wave"></i> Pay Dues (â‚¹${member.dueAmount})
                                 </button>
                                 ` : ''}
                             </div>
@@ -7692,7 +7641,7 @@
                     records[recordIndex].duration = duration;
                     
                     this.saveAttendanceRecords(records);
-                    this.showToast(`🚪 ${member.fullName} checked out. Duration: ${duration}`, 'success');
+                    this.showToast(`ðŸšª ${member.fullName} checked out. Duration: ${duration}`, 'success');
                 } else {
                     // Not checked in - do check-in
                     const newRecord = {
@@ -7717,7 +7666,7 @@
                     }
                     
                     this.saveToLocalStorage();
-                    this.showToast(`✅ ${member.fullName} checked in at ${time}!`, 'success');
+                    this.showToast(`âœ… ${member.fullName} checked in at ${time}!`, 'success');
                 }
                 
                 this.renderMembers();
@@ -7821,7 +7770,7 @@
                         <div class="detail-item">
                             <div class="detail-label">Pending Dues</div>
                             <div class="detail-value" style="color: ${dueAmount > 0 ? 'var(--danger)' : 'var(--success)'}; font-weight: bold;">
-                                ${dueAmount > 0 ? `₹${dueAmount.toLocaleString()}` : 'No Dues ✓'}
+                                ${dueAmount > 0 ? `â‚¹${dueAmount.toLocaleString()}` : 'No Dues âœ“'}
                             </div>
                         </div>
                         <div class="detail-item">
@@ -7902,7 +7851,7 @@
                                 <p style="margin-bottom: 8px; color: var(--text-secondary);">Member: <strong style="color: var(--text-primary);">${member.fullName}</strong></p>
                                 <p style="margin-bottom: 8px; color: var(--text-secondary);">Roll No: <strong style="color: var(--text-primary);">${member.serialNumber}</strong></p>
                                 <p style="color: var(--danger); font-size: 1.2rem; font-weight: bold;">
-                                    <i class="fas fa-exclamation-circle"></i> Total Dues: ₹${dueAmount.toLocaleString()}
+                                    <i class="fas fa-exclamation-circle"></i> Total Dues: â‚¹${dueAmount.toLocaleString()}
                                 </p>
                             </div>
                             
@@ -7910,22 +7859,22 @@
                                 <label style="display: block; margin-bottom: 8px; font-weight: 600;">Amount Paying:</label>
                                 <input type="number" id="duesPayAmount" value="${dueAmount}" max="${dueAmount}" min="1" 
                                     style="width: 100%; padding: 12px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1rem; font-weight: bold;"
-                                    oninput="document.getElementById('remainingDues').textContent = '₹' + Math.max(0, ${dueAmount} - (this.value || 0)).toLocaleString()">
+                                    oninput="document.getElementById('remainingDues').textContent = 'â‚¹' + Math.max(0, ${dueAmount} - (this.value || 0)).toLocaleString()">
                                 <small style="color: var(--text-secondary);">Enter partial or full amount</small>
                             </div>
                             
                             <div style="background: #fff3cd; padding: 10px 15px; border-radius: 8px; margin-bottom: 15px;">
                                 <span style="color: #856404;">Remaining after payment: </span>
-                                <strong id="remainingDues" style="color: #856404;">₹0</strong>
+                                <strong id="remainingDues" style="color: #856404;">â‚¹0</strong>
                             </div>
                             
                             <div class="form-group" style="margin-bottom: 15px;">
                                 <label style="display: block; margin-bottom: 8px; font-weight: 600;">Payment Mode:</label>
                                 <select id="duesPaymentMode" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem;">
-                                    <option value="Cash">💵 Cash</option>
-                                    <option value="UPI">📱 UPI</option>
-                                    <option value="Card">💳 Card</option>
-                                    <option value="Bank Transfer">🏦 Bank Transfer</option>
+                                    <option value="Cash">ðŸ’µ Cash</option>
+                                    <option value="UPI">ðŸ“± UPI</option>
+                                    <option value="Card">ðŸ’³ Card</option>
+                                    <option value="Bank Transfer">ðŸ¦ Bank Transfer</option>
                                 </select>
                             </div>
                             
@@ -7976,7 +7925,7 @@
                     amount: payAmount,
                     type: 'Dues Payment',
                     mode: paymentMode,
-                    note: `Dues payment - Previous: ₹${oldDues}, Paid: ₹${payAmount}, Remaining: ₹${member.dueAmount}`,
+                    note: `Dues payment - Previous: â‚¹${oldDues}, Paid: â‚¹${payAmount}, Remaining: â‚¹${member.dueAmount}`,
                     timestamp: today.toISOString()
                 });
 
@@ -7989,72 +7938,68 @@
                 document.getElementById('payDuesModal').remove();
                 this.showMemberDetails(memberId);
 
-<<<<<<< HEAD
                 // Check if dues fully cleared - show dues clear message option
                 if (member.dueAmount === 0) {
                     // Show dues clear message modal with WhatsApp/SMS options
                     this.showDuesClearMessageModal(member, payAmount);
-                    this.showToast(`✅ All dues cleared for ${member.fullName}!`, 'success');
+                    this.showToast(`âœ… All dues cleared for ${member.fullName}!`, 'success');
                 } else {
                     // For partial payment, send regular receipt
                     const receiptDate = today.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-                    let receiptMsg = `🧾 *SG FITNESS EVOLUTION*\n`;
-                    receiptMsg += `━━━━━━━━━━━━━━━━━━━━\n`;
-                    receiptMsg += `📋 *DUES PAYMENT RECEIPT*\n`;
-                    receiptMsg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
-                    receiptMsg += `👤 *Member:* ${member.fullName}\n`;
-                    receiptMsg += `🔢 *Roll No:* ${member.serialNumber}\n`;
-                    receiptMsg += `📅 *Date:* ${receiptDate}\n\n`;
-                    receiptMsg += `💰 *Payment Details:*\n`;
-                    receiptMsg += `├ Previous Dues: ₹${oldDues.toLocaleString()}\n`;
-                    receiptMsg += `├ Amount Paid: ₹${payAmount.toLocaleString()}\n`;
-                    receiptMsg += `├ Payment Mode: ${paymentMode}\n`;
-                    receiptMsg += `└ ⚠️ *Remaining Dues: ₹${member.dueAmount.toLocaleString()}*\n\n`;
-                    receiptMsg += `🙏 Please clear remaining dues soon.\n`;
-                    receiptMsg += `\n━━━━━━━━━━━━━━━━━━━━\n`;
-                    receiptMsg += `💪 Thank You for being with SG FITNESS!`;
+                    let receiptMsg = `ðŸ§¾ *SG FITNESS EVOLUTION*\n`;
+                    receiptMsg += `â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n`;
+                    receiptMsg += `ðŸ“‹ *DUES PAYMENT RECEIPT*\n`;
+                    receiptMsg += `â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n\n`;
+                    receiptMsg += `ðŸ‘¤ *Member:* ${member.fullName}\n`;
+                    receiptMsg += `ðŸ”¢ *Roll No:* ${member.serialNumber}\n`;
+                    receiptMsg += `ðŸ“… *Date:* ${receiptDate}\n\n`;
+                    receiptMsg += `ðŸ’° *Payment Details:*\n`;
+                    receiptMsg += `â”œ Previous Dues: â‚¹${oldDues.toLocaleString()}\n`;
+                    receiptMsg += `â”œ Amount Paid: â‚¹${payAmount.toLocaleString()}\n`;
+                    receiptMsg += `â”œ Payment Mode: ${paymentMode}\n`;
+                    receiptMsg += `â”” âš ï¸ *Remaining Dues: â‚¹${member.dueAmount.toLocaleString()}*\n\n`;
+                    receiptMsg += `ðŸ™ Please clear remaining dues soon.\n`;
+                    receiptMsg += `\nâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n`;
+                    receiptMsg += `ðŸ’ª Thank You for being with SG FITNESS!`;
                     
                     const whatsappUrl = `https://wa.me/91${member.mobileNumber}?text=${encodeURIComponent(receiptMsg)}`;
                     window.open(whatsappUrl, '_blank');
-=======
                 // Send WhatsApp receipt message
                 const receiptDate = today.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-                let receiptMsg = `🧾 *SG FITNESS EVOLUTION*\n`;
-                receiptMsg += `━━━━━━━━━━━━━━━━━━━━\n`;
-                receiptMsg += `📋 *DUES PAYMENT RECEIPT*\n`;
-                receiptMsg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
-                receiptMsg += `👤 *Member:* ${member.fullName}\n`;
-                receiptMsg += `🔢 *Roll No:* ${member.serialNumber}\n`;
-                receiptMsg += `📅 *Date:* ${receiptDate}\n\n`;
-                receiptMsg += `💰 *Payment Details:*\n`;
-                receiptMsg += `├ Previous Dues: ₹${oldDues.toLocaleString()}\n`;
-                receiptMsg += `├ Amount Paid: ₹${payAmount.toLocaleString()}\n`;
-                receiptMsg += `├ Payment Mode: ${paymentMode}\n`;
+                let receiptMsg = `ðŸ§¾ *SG FITNESS EVOLUTION*\n`;
+                receiptMsg += `â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n`;
+                receiptMsg += `ðŸ“‹ *DUES PAYMENT RECEIPT*\n`;
+                receiptMsg += `â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n\n`;
+                receiptMsg += `ðŸ‘¤ *Member:* ${member.fullName}\n`;
+                receiptMsg += `ðŸ”¢ *Roll No:* ${member.serialNumber}\n`;
+                receiptMsg += `ðŸ“… *Date:* ${receiptDate}\n\n`;
+                receiptMsg += `ðŸ’° *Payment Details:*\n`;
+                receiptMsg += `â”œ Previous Dues: â‚¹${oldDues.toLocaleString()}\n`;
+                receiptMsg += `â”œ Amount Paid: â‚¹${payAmount.toLocaleString()}\n`;
+                receiptMsg += `â”œ Payment Mode: ${paymentMode}\n`;
                 
                 if (member.dueAmount > 0) {
-                    receiptMsg += `└ ⚠️ *Remaining Dues: ₹${member.dueAmount.toLocaleString()}*\n\n`;
-                    receiptMsg += `🙏 Please clear remaining dues soon.\n`;
+                    receiptMsg += `â”” âš ï¸ *Remaining Dues: â‚¹${member.dueAmount.toLocaleString()}*\n\n`;
+                    receiptMsg += `ðŸ™ Please clear remaining dues soon.\n`;
                 } else {
-                    receiptMsg += `└ ✅ *Remaining Dues: ₹0*\n\n`;
-                    receiptMsg += `🎉 *All Dues Cleared!* Thank you!\n`;
+                    receiptMsg += `â”” âœ… *Remaining Dues: â‚¹0*\n\n`;
+                    receiptMsg += `ðŸŽ‰ *All Dues Cleared!* Thank you!\n`;
                 }
                 
-                receiptMsg += `\n━━━━━━━━━━━━━━━━━━━━\n`;
-                receiptMsg += `💪 Thank You for being with SG FITNESS!`;
+                receiptMsg += `\nâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n`;
+                receiptMsg += `ðŸ’ª Thank You for being with SG FITNESS!`;
                 
                 // Open WhatsApp with receipt
                 const whatsappUrl = `https://wa.me/91${member.phone}?text=${encodeURIComponent(receiptMsg)}`;
                 window.open(whatsappUrl, '_blank');
 
                 if (member.dueAmount === 0) {
-                    this.showToast(`✅ All dues cleared for ${member.fullName}!`, 'success');
+                    this.showToast(`âœ… All dues cleared for ${member.fullName}!`, 'success');
                 } else {
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
-                    this.showToast(`✅ ₹${payAmount} dues paid! Remaining: ₹${member.dueAmount}`, 'success');
+                    this.showToast(`âœ… â‚¹${payAmount} dues paid! Remaining: â‚¹${member.dueAmount}`, 'success');
                 }
             }
 
-<<<<<<< HEAD
             // Show modal with options to send Dues Clear message
             showDuesClearMessageModal(member, amount) {
                 const existingModal = document.getElementById('duesClearMessageModal');
@@ -8065,10 +8010,10 @@
                 modal.innerHTML = `
                     <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 10000; display: flex; justify-content: center; align-items: center; padding: 20px;">
                         <div style="background: white; padding: 25px; border-radius: 20px; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
-                            <div style="font-size: 4rem; margin-bottom: 15px;">🎉✅</div>
+                            <div style="font-size: 4rem; margin-bottom: 15px;">ðŸŽ‰âœ…</div>
                             <h2 style="margin: 0 0 10px; color: #28a745;">Dues Cleared!</h2>
                             <p style="color: var(--gray); margin-bottom: 20px;">
-                                ₹${amount.toLocaleString()} paid by <strong>${member.fullName}</strong>
+                                â‚¹${amount.toLocaleString()} paid by <strong>${member.fullName}</strong>
                             </p>
                             
                             <p style="color: var(--gray); margin-bottom: 15px;">Send dues clear message:</p>
@@ -8091,8 +8036,6 @@
                 document.body.appendChild(modal);
             }
 
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
             editExpiryDate(memberId) {
                 const member = this.members.find(m => m.id === memberId);
                 if (!member) return;
@@ -8163,7 +8106,7 @@
                 document.getElementById('editExpiryModal').remove();
                 this.showMemberDetails(memberId);
                 
-                this.showToast(`Expiry date updated: ${this.formatDate(oldExpiry)} → ${this.formatDate(newExpiry)}`, 'success');
+                this.showToast(`Expiry date updated: ${this.formatDate(oldExpiry)} â†’ ${this.formatDate(newExpiry)}`, 'success');
             }
 
             openAddMemberModal() {
@@ -8282,14 +8225,14 @@
                 if (!memberId) {
                     const existingMember = this.members.find(m => m.mobileNumber === mobileNumber);
                     if (existingMember) {
-                        this.showToast(`⚠️ Member already exists with this phone number!\n\nName: ${existingMember.fullName}\nRoll No: ${existingMember.serialNumber}`, 'error');
+                        this.showToast(`âš ï¸ Member already exists with this phone number!\n\nName: ${existingMember.fullName}\nRoll No: ${existingMember.serialNumber}`, 'error');
                         return;
                     }
                     
                     // Check for duplicate roll number
                     const existingRoll = this.members.find(m => m.serialNumber === serialNumber);
                     if (existingRoll) {
-                        this.showToast(`⚠️ Roll Number ${serialNumber} already exists!\n\nName: ${existingRoll.fullName}`, 'error');
+                        this.showToast(`âš ï¸ Roll Number ${serialNumber} already exists!\n\nName: ${existingRoll.fullName}`, 'error');
                         return;
                     }
                 }
@@ -8438,7 +8381,7 @@
                             <span class="close-modal" onclick="document.getElementById('welcomeMessageModal').remove()">&times;</span>
                         </div>
                         <div class="modal-body" style="padding: 25px; text-align: center;">
-                            <div style="font-size: 4rem; margin-bottom: 15px;">🎉</div>
+                            <div style="font-size: 4rem; margin-bottom: 15px;">ðŸŽ‰</div>
                             <h3 style="color: var(--success); margin-bottom: 10px;">Welcome to ${gymName}!</h3>
                             
                             <div style="background: var(--bg-secondary); padding: 15px; border-radius: 10px; margin: 20px 0; text-align: left;">
@@ -8482,7 +8425,6 @@
                 }
                 const formattedPhone = '91' + cleanPhone;
                 
-<<<<<<< HEAD
                 const today = new Date().toLocaleDateString('en-IN');
                 const validDate = new Date(validTill);
                 const formattedValidTill = validDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -8495,7 +8437,6 @@
                     joinDate: today,
                     validTill: formattedValidTill
                 });
-=======
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
                 const gymPhone = settings.phone || '9876543210';
@@ -8506,26 +8447,25 @@
                 const validDate = new Date(validTill);
                 const formattedValidTill = validDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
 
-                const message = `🏋️ *${gymName}*
+                const message = `ðŸ‹ï¸ *${gymName}*
 
-🎉 *Welcome to our Gym Family!*
+ðŸŽ‰ *Welcome to our Gym Family!*
 
-Namaste *${name}* Ji! 🙏
+Namaste *${name}* Ji! ðŸ™
 
-Thank you for joining us! 💪
+Thank you for joining us! ðŸ’ª
 
 *Your Details:*
-📋 Roll No: ${rollNo}
-📅 Join Date: ${today}
-📅 Valid Till: ${formattedValidTill}
+ðŸ“‹ Roll No: ${rollNo}
+ðŸ“… Join Date: ${today}
+ðŸ“… Valid Till: ${formattedValidTill}
 
-Aapka aur aapki family ka swasthya humesha achha rahe! Stay fit, stay healthy! 🌟
+Aapka aur aapki family ka swasthya humesha achha rahe! Stay fit, stay healthy! ðŸŒŸ
 
-📍 ${gymAddress}
-📞 ${gymPhone}
+ðŸ“ ${gymAddress}
+ðŸ“ž ${gymPhone}
 
-*Welcome aboard!* 💪🔥`;
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
+*Welcome aboard!* ðŸ’ªðŸ”¥`;
 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -8543,7 +8483,6 @@ Aapka aur aapki family ka swasthya humesha achha rahe! Stay fit, stay healthy! �
                     cleanPhone = cleanPhone.slice(-10);
                 }
                 
-<<<<<<< HEAD
                 const today = new Date().toLocaleDateString('en-IN');
                 const validDate = new Date(validTill);
                 const formattedValidTill = validDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -8558,7 +8497,6 @@ Aapka aur aapki family ka swasthya humesha achha rahe! Stay fit, stay healthy! �
                 });
                 // Remove emojis and * for SMS
                 message = message.replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]/gu, '').replace(/\*/g, '');
-=======
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
                 const gymPhone = settings.phone || '9876543210';
@@ -8581,7 +8519,6 @@ Valid Till: ${formattedValidTill}
 Aapka aur aapki family ka swasthya humesha achha rahe! Stay fit!
 
 Contact: ${gymPhone}`;
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
 
                 const smsUrl = `sms:${cleanPhone}?body=${encodeURIComponent(message)}`;
                 window.open(smsUrl, '_blank');
@@ -8600,11 +8537,8 @@ Contact: ${gymPhone}`;
                     return;
                 }
 
-<<<<<<< HEAD
                 // Mark member as deleted for extra safety (in case of stale localStorage)
                 member.isDeleted = true;
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 this.members = this.members.filter(m => m.id !== memberId);
                 this.saveToLocalStorage();
                 this.autoSyncToCloud(); // Auto sync to cloud
@@ -8651,7 +8585,7 @@ Contact: ${gymPhone}`;
                 const totalDues = this.members.reduce((sum, member) => {
                     return sum + (member.dueAmount || 0);
                 }, 0);
-                document.getElementById('totalDues').textContent = `₹${totalDues.toLocaleString()}`;
+                document.getElementById('totalDues').textContent = `â‚¹${totalDues.toLocaleString()}`;
             }
 
             setupExpiryCheck() {
@@ -8685,7 +8619,7 @@ Contact: ${gymPhone}`;
                         // Add to notification panel
                         this.addNotification({
                             type: 'expiry',
-                            title: '⚠️ Membership Expiring Soon',
+                            title: 'âš ï¸ Membership Expiring Soon',
                             message: `${member.fullName} (${member.serialNumber}) membership expires in ${daysLeft} day${daysLeft !== 1 ? 's' : ''} (${this.formatDate(member.expiryDate)})`,
                             memberId: member.id,
                             memberName: member.fullName,
@@ -8706,11 +8640,10 @@ Contact: ${gymPhone}`;
                 this.updateNotificationBadge();
                 
                 if (expiringCount > 0) {
-                    document.title = `⚠️ ${expiringCount} Expiring Soon - Gym Management`;
+                    document.title = `âš ï¸ ${expiringCount} Expiring Soon - Gym Management`;
                 }
             }
 
-            // ============ PAYMENT & RENEWAL METHODS ============
             openPaymentModal(memberId) {
                 const member = this.members.find(m => m.id === memberId);
                 if (!member) return;
@@ -8733,7 +8666,7 @@ Contact: ${gymPhone}`;
                 ];
                 
                 const planOptions = plans.map(p => 
-                    `<option value="${p.id}" data-days="${p.days}" data-price="${p.price}">${p.name} - ${p.days} Days - ₹${p.price.toLocaleString()}</option>`
+                    `<option value="${p.id}" data-days="${p.days}" data-price="${p.price}">${p.name} - ${p.days} Days - â‚¹${p.price.toLocaleString()}</option>`
                 ).join('');
                 
                 paymentContent.innerHTML = `
@@ -8744,7 +8677,7 @@ Contact: ${gymPhone}`;
                         <p><strong>Status:</strong> <span style="color: ${isExpired ? 'var(--danger)' : 'var(--success)'}">
                             ${isExpired ? 'EXPIRED' : daysUntilExpiry + ' days remaining'}
                         </span></p>
-                        ${currentDues > 0 ? `<p><strong>Previous Dues:</strong> <span style="color: var(--danger); font-weight: bold;">₹${currentDues.toLocaleString()}</span></p>` : ''}
+                        ${currentDues > 0 ? `<p><strong>Previous Dues:</strong> <span style="color: var(--danger); font-weight: bold;">â‚¹${currentDues.toLocaleString()}</span></p>` : ''}
                     </div>
                     
                     <div class="form-group" style="margin-bottom: 15px;">
@@ -8769,11 +8702,11 @@ Contact: ${gymPhone}`;
                     <div id="paymentDetails" style="display: none;">
                         <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                             <div class="form-group">
-                                <label for="planAmount"><strong>Plan Amount (₹):</strong></label>
+                                <label for="planAmount"><strong>Plan Amount (â‚¹):</strong></label>
                                 <input type="number" id="planAmount" readonly style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">
                             </div>
                             <div class="form-group">
-                                <label for="paidAmount"><strong>Amount Paid (₹):</strong></label>
+                                <label for="paidAmount"><strong>Amount Paid (â‚¹):</strong></label>
                                 <input type="number" id="paidAmount" min="0" oninput="gym.calculateDues()" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
                             </div>
                         </div>
@@ -8782,7 +8715,7 @@ Contact: ${gymPhone}`;
                         <div class="form-group" style="margin-bottom: 15px;">
                             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
                                 <input type="checkbox" id="includePreviousDues" onchange="gym.calculateDues()" style="width: 18px; height: 18px;">
-                                <span>Include Previous Dues (₹${currentDues.toLocaleString()})</span>
+                                <span>Include Previous Dues (â‚¹${currentDues.toLocaleString()})</span>
                             </label>
                         </div>
                         ` : ''}
@@ -8791,33 +8724,33 @@ Contact: ${gymPhone}`;
                             <h4 style="margin-bottom: 10px;"><i class="fas fa-receipt"></i> Payment Summary</h4>
                             <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                                 <span>Plan Amount (per month):</span>
-                                <span id="summaryPlanAmountPerMonth">₹0</span>
+                                <span id="summaryPlanAmountPerMonth">â‚¹0</span>
                             </div>
                             <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                                 <span>Number of Months:</span>
-                                <span id="summaryMonths" style="color: var(--primary); font-weight: bold;">×1</span>
+                                <span id="summaryMonths" style="color: var(--primary); font-weight: bold;">Ã—1</span>
                             </div>
                             <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                                 <span>Plan Amount:</span>
-                                <span id="summaryPlanAmount">₹0</span>
+                                <span id="summaryPlanAmount">â‚¹0</span>
                             </div>
                             ${currentDues > 0 ? `
                             <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                                 <span>Previous Dues:</span>
-                                <span id="summaryPrevDues" style="color: var(--danger);">₹0</span>
+                                <span id="summaryPrevDues" style="color: var(--danger);">â‚¹0</span>
                             </div>
                             ` : ''}
                             <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                                 <span>Total Amount:</span>
-                                <span id="summaryTotalAmount" style="font-weight: bold;">₹0</span>
+                                <span id="summaryTotalAmount" style="font-weight: bold;">â‚¹0</span>
                             </div>
                             <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                                 <span>Amount Paid:</span>
-                                <span id="summaryPaidAmount" style="color: var(--success);">₹0</span>
+                                <span id="summaryPaidAmount" style="color: var(--success);">â‚¹0</span>
                             </div>
                             <div class="summary-row" style="display: flex; justify-content: space-between; padding-top: 10px; border-top: 1px dashed var(--border-color);">
                                 <span><strong>Due Amount:</strong></span>
-                                <span id="summaryDueAmount" style="color: var(--danger); font-weight: bold; font-size: 1.1em;">₹0</span>
+                                <span id="summaryDueAmount" style="color: var(--danger); font-weight: bold; font-size: 1.1em;">â‚¹0</span>
                             </div>
                             <div class="summary-row" style="display: flex; justify-content: space-between; margin-top: 10px;">
                                 <span>Extension:</span>
@@ -8832,10 +8765,10 @@ Contact: ${gymPhone}`;
                         <div class="form-group" style="margin-top: 15px;">
                             <label><strong><i class="fas fa-wallet"></i> Payment Mode:</strong></label>
                             <select id="renewalPaymentMode" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); margin-top: 5px;">
-                                <option value="Cash">💵 Cash</option>
-                                <option value="UPI">📱 UPI</option>
-                                <option value="Card">💳 Card</option>
-                                <option value="Bank Transfer">🏦 Bank Transfer</option>
+                                <option value="Cash">ðŸ’µ Cash</option>
+                                <option value="UPI">ðŸ“± UPI</option>
+                                <option value="Card">ðŸ’³ Card</option>
+                                <option value="Bank Transfer">ðŸ¦ Bank Transfer</option>
                             </select>
                         </div>
                     </div>
@@ -8924,18 +8857,18 @@ Contact: ${gymPhone}`;
                 
                 // Update summary
                 if (document.getElementById('summaryPlanAmountPerMonth')) {
-                    document.getElementById('summaryPlanAmountPerMonth').textContent = `₹${pricePerMonth.toLocaleString()}`;
+                    document.getElementById('summaryPlanAmountPerMonth').textContent = `â‚¹${pricePerMonth.toLocaleString()}`;
                 }
                 if (document.getElementById('summaryMonths')) {
-                    document.getElementById('summaryMonths').textContent = `×${months}`;
+                    document.getElementById('summaryMonths').textContent = `Ã—${months}`;
                 }
-                document.getElementById('summaryPlanAmount').textContent = `₹${planAmount.toLocaleString()}`;
+                document.getElementById('summaryPlanAmount').textContent = `â‚¹${planAmount.toLocaleString()}`;
                 if (document.getElementById('summaryPrevDues')) {
-                    document.getElementById('summaryPrevDues').textContent = `₹${prevDues.toLocaleString()}`;
+                    document.getElementById('summaryPrevDues').textContent = `â‚¹${prevDues.toLocaleString()}`;
                 }
-                document.getElementById('summaryTotalAmount').textContent = `₹${totalAmount.toLocaleString()}`;
-                document.getElementById('summaryPaidAmount').textContent = `₹${paidAmount.toLocaleString()}`;
-                document.getElementById('summaryDueAmount').textContent = `₹${dueAmount.toLocaleString()}`;
+                document.getElementById('summaryTotalAmount').textContent = `â‚¹${totalAmount.toLocaleString()}`;
+                document.getElementById('summaryPaidAmount').textContent = `â‚¹${paidAmount.toLocaleString()}`;
+                document.getElementById('summaryDueAmount').textContent = `â‚¹${dueAmount.toLocaleString()}`;
                 document.getElementById('summaryDays').textContent = `+${totalDays} days`;
                 
                 // Calculate new expiry date
@@ -8989,7 +8922,7 @@ Contact: ${gymPhone}`;
                 // Update summary display
                 document.getElementById('summaryDays').textContent = `+${this.selectedPlanDays} days`;
                 document.getElementById('summaryNewExpiry').textContent = this.formatDate(newExpiry.toISOString().split('T')[0]);
-                document.getElementById('summaryAmount').textContent = `₹${this.selectedPlanAmount.toLocaleString()}`;
+                document.getElementById('summaryAmount').textContent = `â‚¹${this.selectedPlanAmount.toLocaleString()}`;
             }
 
             confirmPayment(memberId) {
@@ -9076,7 +9009,6 @@ Contact: ${gymPhone}`;
                 this.showBillModal(member, paymentRecord);
             }
 
-            // ============ BILL GENERATION ============
             showBillModal(member, payment) {
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
@@ -9092,12 +9024,12 @@ Contact: ${gymPhone}`;
                         
                         <div id="billPreview" style="background: #f8f9fa; border: 2px dashed #ddd; border-radius: 10px; padding: 20px; text-align: left; margin-bottom: 20px;">
                             <div style="text-align: center; margin-bottom: 15px;">
-                                <h3 style="margin: 0; color: var(--primary);">🧾 PAYMENT RECEIPT</h3>
-                                <p style="margin: 5px 0; font-size: 0.9rem; color: var(--gray);">━━━━━━━━━━━━━━━━━</p>
+                                <h3 style="margin: 0; color: var(--primary);">ðŸ§¾ PAYMENT RECEIPT</h3>
+                                <p style="margin: 5px 0; font-size: 0.9rem; color: var(--gray);">â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”</p>
                             </div>
                             
                             <div style="text-align: center; margin-bottom: 15px;">
-                                <h4 style="margin: 0; color: var(--dark);">🏋️ ${gymName}</h4>
+                                <h4 style="margin: 0; color: var(--dark);">ðŸ‹ï¸ ${gymName}</h4>
                                 <p style="margin: 5px 0; font-size: 0.85rem; color: var(--gray);">${gymAddress}</p>
                             </div>
                             
@@ -9110,14 +9042,14 @@ Contact: ${gymPhone}`;
                             
                             <div style="border-top: 1px solid #ddd; padding-top: 15px; margin-top: 15px;">
                                 <p style="margin: 8px 0;"><strong>Plan:</strong> ${payment.days} Days</p>
-                                <p style="margin: 8px 0; font-size: 1.2rem; color: var(--success);"><strong>Amount Paid:</strong> ₹${payment.amount}</p>
-                                <p style="margin: 8px 0;"><strong>Payment Mode:</strong> ${payment.mode === 'Cash' ? '💵' : payment.mode === 'UPI' ? '📱' : payment.mode === 'Card' ? '💳' : '🏦'} ${payment.mode || 'Cash'}</p>
+                                <p style="margin: 8px 0; font-size: 1.2rem; color: var(--success);"><strong>Amount Paid:</strong> â‚¹${payment.amount}</p>
+                                <p style="margin: 8px 0;"><strong>Payment Mode:</strong> ${payment.mode === 'Cash' ? 'ðŸ’µ' : payment.mode === 'UPI' ? 'ðŸ“±' : payment.mode === 'Card' ? 'ðŸ’³' : 'ðŸ¦'} ${payment.mode || 'Cash'}</p>
                                 <p style="margin: 8px 0;"><strong>Valid Till:</strong> ${this.formatDate(payment.newExpiry)}</p>
                             </div>
                             
                             <div style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd;">
-                                <p style="margin: 0; font-size: 0.85rem; color: var(--gray);">Thank you for choosing us! 💪</p>
-                                <p style="margin: 5px 0; font-size: 0.8rem; color: var(--gray);">📞 ${gymPhone}</p>
+                                <p style="margin: 0; font-size: 0.85rem; color: var(--gray);">Thank you for choosing us! ðŸ’ª</p>
+                                <p style="margin: 5px 0; font-size: 0.8rem; color: var(--gray);">ðŸ“ž ${gymPhone}</p>
                             </div>
                         </div>
                         
@@ -9148,18 +9080,14 @@ Contact: ${gymPhone}`;
                 if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
                 const formattedPhone = '91' + cleanPhone;
                 
-<<<<<<< HEAD
-=======
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
                 const gymPhone = settings.phone || '9876543210';
                 const gymAddress = settings.address || 'Your Gym Address';
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 const today = new Date().toLocaleDateString('en-IN');
                 const timeStr = time ? ` at ${time}` : '';
                 const formattedValidTill = new Date(validTill).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 
-<<<<<<< HEAD
                 // Use template system
                 const message = this.applyTemplate('bill', {
                     name: name,
@@ -9170,10 +9098,9 @@ Contact: ${gymPhone}`;
                     validTill: formattedValidTill,
                     joinDate: today + timeStr
                 });
-=======
-                const message = `🧾 *PAYMENT RECEIPT*
+                const message = `ðŸ§¾ *PAYMENT RECEIPT*
 
-🏋️ *${gymName}*
+ðŸ‹ï¸ *${gymName}*
 ${gymAddress}
 
 *Roll No:* ${rollNo}
@@ -9184,9 +9111,8 @@ ${gymAddress}
 *Amount Paid:* Rs.${amount}
 *Valid Till:* ${formattedValidTill}
 
-Thank you for choosing us! 💪
-📞 ${gymPhone}`;
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
+Thank you for choosing us! ðŸ’ª
+ðŸ“ž ${gymPhone}`;
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -9197,16 +9123,12 @@ Thank you for choosing us! 💪
                 let cleanPhone = mobile.replace(/\D/g, '');
                 if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
                 
-<<<<<<< HEAD
-=======
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 const today = new Date().toLocaleDateString('en-IN');
                 const timeStr = time ? ` at ${time}` : '';
                 const formattedValidTill = new Date(validTill).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 
-<<<<<<< HEAD
                 // Use template system - remove emojis for SMS
                 let message = this.applyTemplate('bill', {
                     name: name,
@@ -9220,19 +9142,14 @@ Thank you for choosing us! 💪
                 message = message.replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]/gu, '').replace(/\*/g, '');
                 
                 const smsUrl = `sms:${cleanPhone}?body=${encodeURIComponent(message)}`;
-=======
                 const smsMessage = `PAYMENT RECEIPT - ${gymName}. Roll No: ${rollNo}, Name: ${name}, Date: ${today}${timeStr}, Plan: ${days} Days, Amount: Rs.${amount}, Valid Till: ${formattedValidTill}. Thank you!`;
                 
                 const smsUrl = `sms:${cleanPhone}?body=${encodeURIComponent(smsMessage)}`;
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 window.open(smsUrl, '_blank');
                 this.showToast('Opening SMS with bill...');
             }
-            // ============ END BILL GENERATION ============
 
-            // ============ END PAYMENT METHODS ============
 
-            // ============ DARK MODE ============
             toggleDarkMode() {
                 const html = document.documentElement;
                 const themeIcon = document.getElementById('themeIcon');
@@ -9243,13 +9160,13 @@ Thank you for choosing us! 💪
                     themeIcon.classList.remove('fa-sun');
                     themeIcon.classList.add('fa-moon');
                     localStorage.setItem('theme', 'light');
-                    this.showToast('☀️ Light Mode Enabled');
+                    this.showToast('â˜€ï¸ Light Mode Enabled');
                 } else {
                     html.setAttribute('data-theme', 'dark');
                     themeIcon.classList.remove('fa-moon');
                     themeIcon.classList.add('fa-sun');
                     localStorage.setItem('theme', 'dark');
-                    this.showToast('🌙 Dark Mode Enabled');
+                    this.showToast('ðŸŒ™ Dark Mode Enabled');
                 }
             }
 
@@ -9266,7 +9183,6 @@ Thank you for choosing us! 💪
                 }
             }
 
-            // ============ HAMBURGER MENU FUNCTIONS ============
             toggleSideMenu() {
                 const sideMenu = document.getElementById('sideMenu');
                 const menuOverlay = document.getElementById('sideMenuOverlay');
@@ -9281,7 +9197,6 @@ Thank you for choosing us! 💪
                 menuOverlay.classList.remove('active');
             }
 
-            // ============ SEE ALL MEMBERS TOGGLE ============
             toggleMembersView() {
                 const membersGrid = document.getElementById('membersGrid');
                 const btn = document.getElementById('seeMembersBtn');
@@ -9320,7 +9235,6 @@ Thank you for choosing us! 💪
                 this.switchTab(tabName);
             }
 
-            // ============ TAB NAVIGATION ============
             switchTab(tabName) {
                 // Hide all tabs
                 document.querySelectorAll('.tab-content').forEach(tab => {
@@ -9361,20 +9275,16 @@ Thank you for choosing us! 💪
                         this.loadPlans();
                         this.loadSettings();
                         break;
-<<<<<<< HEAD
                     case 'templates':
                         this.loadTemplateEditor();
                         break;
-=======
                     
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                     case 'media':
                         this.updateVisitingCard();
                         break;
                 }
             }
 
-            // ============ ATTENDANCE SYSTEM ============
             loadAttendance() {
                 // Set today's date in date picker
                 const today = new Date().toISOString().split('T')[0];
@@ -9438,7 +9348,7 @@ Thank you for choosing us! 💪
                             <div class="attendance-member-info">
                                 <span class="name">${member.fullName}</span>
                                 <span class="details">Roll: ${member.serialNumber} | ${member.mobile}</span>
-                                ${isCheckedIn ? `<span class="status-in">✓ In Gym since ${todayRecord.entryTime}</span>` : ''}
+                                ${isCheckedIn ? `<span class="status-in">âœ“ In Gym since ${todayRecord.entryTime}</span>` : ''}
                             </div>
                             ${isCheckedIn 
                                 ? `<button class="btn-checkout" onclick="gym.checkOut('${member.id}')">
@@ -9638,7 +9548,6 @@ Thank you for choosing us! 💪
                 }).join('');
             }
 
-            // ============ TODAY'S SUMMARY ============
             loadTodaySummary() {
                 const today = new Date().toISOString().split('T')[0];
                 document.getElementById('todaySummaryDate').textContent = this.formatDate(today);
@@ -9685,7 +9594,7 @@ Thank you for choosing us! 💪
                     }
                 });
                 
-                document.getElementById('todayCollection').textContent = `₹${todayCollection.toLocaleString()}`;
+                document.getElementById('todayCollection').textContent = `â‚¹${todayCollection.toLocaleString()}`;
                 document.getElementById('todayAdmissions').textContent = todayAdmissions;
                 document.getElementById('todayRenewals').textContent = todayRenewals;
                 
@@ -9710,7 +9619,7 @@ Thank you for choosing us! 💪
                         <tr>
                             <td>${p.serial}</td>
                             <td>${p.name}</td>
-                            <td>₹${p.amount}</td>
+                            <td>â‚¹${p.amount}</td>
                             <td><span class="badge ${p.type === 'Admission' ? 'badge-success' : 'badge-warning'}">${p.type}</span></td>
                         </tr>
                     `).join('');
@@ -9719,7 +9628,6 @@ Thank you for choosing us! 💪
                 }
             }
 
-            // ============ PAYMENT HISTORY ============
             loadPaymentHistory() {
                 this.filterPaymentHistory();
             }
@@ -9795,7 +9703,7 @@ Thank you for choosing us! 💪
                 
                 // Calculate total
                 const total = allPayments.reduce((sum, p) => sum + p.amount, 0);
-                document.getElementById('filteredTotalCollection').textContent = `₹${total.toLocaleString()}`;
+                document.getElementById('filteredTotalCollection').textContent = `â‚¹${total.toLocaleString()}`;
                 
                 // Render table
                 const tbody = document.getElementById('paymentHistoryTable');
@@ -9809,15 +9717,15 @@ Thank you for choosing us! 💪
                             <td>${p.serial}</td>
                             <td>${p.name}</td>
                             <td>${p.plan}</td>
-                            <td style="color: var(--success);">₹${p.amount.toLocaleString()}</td>
+                            <td style="color: var(--success);">â‚¹${p.amount.toLocaleString()}</td>
                             <td style="color: ${p.dueAmount > 0 ? 'var(--danger)' : 'var(--gray)'}; font-weight: ${p.dueAmount > 0 ? 'bold' : 'normal'};">
-                                ${p.dueAmount > 0 ? `₹${p.dueAmount.toLocaleString()}` : '-'}
+                                ${p.dueAmount > 0 ? `â‚¹${p.dueAmount.toLocaleString()}` : '-'}
                             </td>
                             <td>
                                 <span style="padding: 4px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; 
                                     background: ${p.mode === 'Cash' ? '#e8f5e9' : p.mode === 'UPI' ? '#e3f2fd' : p.mode === 'Card' ? '#fff3e0' : '#f3e5f5'};
                                     color: ${p.mode === 'Cash' ? '#2e7d32' : p.mode === 'UPI' ? '#1565c0' : p.mode === 'Card' ? '#ef6c00' : '#7b1fa2'};">
-                                    ${p.mode === 'Cash' ? '💵' : p.mode === 'UPI' ? '📱' : p.mode === 'Card' ? '💳' : '🏦'} ${p.mode}
+                                    ${p.mode === 'Cash' ? 'ðŸ’µ' : p.mode === 'UPI' ? 'ðŸ“±' : p.mode === 'Card' ? 'ðŸ’³' : 'ðŸ¦'} ${p.mode}
                                 </span>
                             </td>
                             <td>${p.newExpiry !== '-' ? this.formatDate(p.newExpiry) : '-'}</td>
@@ -9843,7 +9751,7 @@ Thank you for choosing us! 💪
 
             // Delete single payment
             deleteSinglePayment(memberId, date, amount) {
-                if (!confirm(`⚠️ Warning!\n\nAre you sure you want to delete this payment?\n\nAmount: ₹${amount}\nDate: ${date}\n\nThis action cannot be undone!`)) {
+                if (!confirm(`âš ï¸ Warning!\n\nAre you sure you want to delete this payment?\n\nAmount: â‚¹${amount}\nDate: ${date}\n\nThis action cannot be undone!`)) {
                     return;
                 }
                 
@@ -9882,7 +9790,7 @@ Thank you for choosing us! 💪
                     return;
                 }
                 
-                if (!confirm(`Clear dues of ₹${dueAmount.toLocaleString()} for ${member.fullName}?\n\nThis will mark the dues as paid.`)) {
+                if (!confirm(`Clear dues of â‚¹${dueAmount.toLocaleString()} for ${member.fullName}?\n\nThis will mark the dues as paid.`)) {
                     return;
                 }
                 
@@ -9934,7 +9842,7 @@ Thank you for choosing us! 💪
                     return;
                 }
                 
-                if (!confirm(`⚠️ WARNING!\n\nYou are about to delete ALL renewal payment history!\n\nTotal renewal payments: ${totalRenewalPayments}\n\nNote: Admission payments will NOT be deleted.\nMembers will NOT be deleted.\n\nAre you sure?`)) {
+                if (!confirm(`âš ï¸ WARNING!\n\nYou are about to delete ALL renewal payment history!\n\nTotal renewal payments: ${totalRenewalPayments}\n\nNote: Admission payments will NOT be deleted.\nMembers will NOT be deleted.\n\nAre you sure?`)) {
                     return;
                 }
                 
@@ -10009,7 +9917,7 @@ Thank you for choosing us! 💪
                             doc.addPage();
                             y = 20;
                         }
-                        doc.text(`${i+1}. ${p['Member Name']} - ${p.Plan} - ₹${p.Amount} - ${p.Date}`, 14, y);
+                        doc.text(`${i+1}. ${p['Member Name']} - ${p.Plan} - â‚¹${p.Amount} - ${p.Date}`, 14, y);
                         y += 8;
                     });
                     
@@ -10018,7 +9926,6 @@ Thank you for choosing us! 💪
                 }
             }
 
-            // ============ PLANS & SETTINGS ============
             loadPlans() {
                 const plans = JSON.parse(localStorage.getItem('gymPlans')) || [
                     { id: 1, name: 'Monthly', days: 30, price: 500, desc: 'Standard 30-day membership', featured: true }
@@ -10028,7 +9935,7 @@ Thank you for choosing us! 💪
                 grid.innerHTML = plans.map(p => `
                     <div class="plan-card-big ${p.featured ? 'featured' : ''}">
                         <h3>${p.name}</h3>
-                        <div class="price">₹${p.price.toLocaleString()}</div>
+                        <div class="price">â‚¹${p.price.toLocaleString()}</div>
                         <div class="duration">${p.days} Days</div>
                         <p style="color: var(--gray);">${p.desc || ''}</p>
                         <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: center;">
@@ -10055,7 +9962,7 @@ Thank you for choosing us! 💪
                 plans.forEach(plan => {
                     const option = document.createElement('option');
                     option.value = plan.id;
-                    option.textContent = `${plan.name} - ${plan.days} Days - ₹${plan.price.toLocaleString()}`;
+                    option.textContent = `${plan.name} - ${plan.days} Days - â‚¹${plan.price.toLocaleString()}`;
                     option.dataset.days = plan.days;
                     option.dataset.price = plan.price;
                     if (selectedPlanId && plan.id == selectedPlanId) {
@@ -10085,7 +9992,7 @@ Thank you for choosing us! 💪
                     
                     // Show plan info
                     document.getElementById('planDurationDisplay').textContent = `${days} Days`;
-                    document.getElementById('planPriceDisplay').textContent = `₹${price.toLocaleString()}`;
+                    document.getElementById('planPriceDisplay').textContent = `â‚¹${price.toLocaleString()}`;
                     planInfo.style.display = 'block';
                     
                     // Auto-select custom days option and set the days
@@ -10201,34 +10108,32 @@ Thank you for choosing us! 💪
                 this.showToast('Settings saved!');
             }
 
-<<<<<<< HEAD
-            // ============ MESSAGE TEMPLATES ============
             currentTemplateType = 'welcome';
             
             defaultTemplates = {
-                welcome: `🏋️ *{gymName}*
+                welcome: `ðŸ‹ï¸ *{gymName}*
 
-🎉 *Welcome to our Gym Family!*
+ðŸŽ‰ *Welcome to our Gym Family!*
 
-Namaste *{name}* Ji! 🙏
+Namaste *{name}* Ji! ðŸ™
 
-Thank you for joining us! 💪
+Thank you for joining us! ðŸ’ª
 
 *Your Details:*
-📋 Roll No: {rollNo}
-📅 Join Date: {joinDate}
-📅 Valid Till: {validTill}
+ðŸ“‹ Roll No: {rollNo}
+ðŸ“… Join Date: {joinDate}
+ðŸ“… Valid Till: {validTill}
 
-Aapka aur aapki family ka swasthya humesha achha rahe! Stay fit, stay healthy! 🌟
+Aapka aur aapki family ka swasthya humesha achha rahe! Stay fit, stay healthy! ðŸŒŸ
 
-📍 {gymAddress}
-📞 {gymPhone}
+ðŸ“ {gymAddress}
+ðŸ“ž {gymPhone}
 
-*Welcome aboard!* 💪🔥`,
+*Welcome aboard!* ðŸ’ªðŸ”¥`,
                 
-                bill: `🧾 *PAYMENT RECEIPT*
+                bill: `ðŸ§¾ *PAYMENT RECEIPT*
 
-🏋️ *{gymName}*
+ðŸ‹ï¸ *{gymName}*
 {gymAddress}
 
 *Roll No:* {rollNo}
@@ -10236,67 +10141,67 @@ Aapka aur aapki family ka swasthya humesha achha rahe! Stay fit, stay healthy! �
 *Date:* {joinDate}
 
 *Plan:* {days} Days
-*Amount Paid:* ₹{amount}
+*Amount Paid:* â‚¹{amount}
 *Valid Till:* {validTill}
 
-Thank you for choosing us! 💪
-📞 {gymPhone}`,
+Thank you for choosing us! ðŸ’ª
+ðŸ“ž {gymPhone}`,
                 
-                birthday: `🎂 *Happy Birthday {name}!* 🎉
+                birthday: `ðŸŽ‚ *Happy Birthday {name}!* ðŸŽ‰
 
-🏋️ *{gymName}* wishes you a very Happy Birthday!
+ðŸ‹ï¸ *{gymName}* wishes you a very Happy Birthday!
 
 May this special day bring you:
-✨ Good Health
-💪 Strength & Fitness
-🌟 Success in all your goals
+âœ¨ Good Health
+ðŸ’ª Strength & Fitness
+ðŸŒŸ Success in all your goals
 
 Stay fit, stay healthy! 
-Have a wonderful year ahead! 🎊
+Have a wonderful year ahead! ðŸŽŠ
 
 With best wishes,
-Team {gymName} 💪`,
+Team {gymName} ðŸ’ª`,
                 
-                expiry: `🏋️ *{gymName}*
+                expiry: `ðŸ‹ï¸ *{gymName}*
 
 Dear *{name}*,
 
 This is a friendly reminder that your gym membership {statusText}.
 
-📅 Expiry Date: {validTill}
+ðŸ“… Expiry Date: {validTill}
 
 Please renew your membership to continue enjoying our facilities and services.
 
-💪 Stay Fit, Stay Healthy!
+ðŸ’ª Stay Fit, Stay Healthy!
 
-📞 Contact: {gymPhone}
+ðŸ“ž Contact: {gymPhone}
 
-Thank you! 🙏`,
+Thank you! ðŸ™`,
                 
-                duesClear: `✅ *DUES CLEARED - {gymName}*
+                duesClear: `âœ… *DUES CLEARED - {gymName}*
 
 Dear *{name}* Ji,
 
-Aapka bakaaya amount clear ho gaya hai! 🎉
+Aapka bakaaya amount clear ho gaya hai! ðŸŽ‰
 
 *Details:*
-📋 Roll No: {rollNo}
-💰 Amount Paid: ₹{amount}
-📅 Date: {joinDate}
-📅 Valid Till: {validTill}
+ðŸ“‹ Roll No: {rollNo}
+ðŸ’° Amount Paid: â‚¹{amount}
+ðŸ“… Date: {joinDate}
+ðŸ“… Valid Till: {validTill}
 
-Thank you for your payment! 🙏
-Ab aap bina kisi tension ke gym enjoy karein! 💪
+Thank you for your payment! ðŸ™
+Ab aap bina kisi tension ke gym enjoy karein! ðŸ’ª
 
-📞 {gymPhone}
-📍 {gymAddress}`,
+ðŸ“ž {gymPhone}
+ðŸ“ {gymAddress}`,
                 
-                broadcast: `📢 *{gymName} - Announcement*
+                broadcast: `ðŸ“¢ *{gymName} - Announcement*
 
 {message}
 
-💪 Stay Fit, Stay Healthy!
-📞 {gymPhone}`
+ðŸ’ª Stay Fit, Stay Healthy!
+ðŸ“ž {gymPhone}`
             };
 
             getMessageTemplates() {
@@ -10374,7 +10279,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 
                 localStorage.setItem('messageTemplates', JSON.stringify(templates));
                 this.autoSyncToCloud();
-                this.showToast('✅ Template saved successfully!', 'success');
+                this.showToast('âœ… Template saved successfully!', 'success');
             }
 
             resetTemplate() {
@@ -10462,9 +10367,6 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 return template;
             }
 
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
-            // ============ CAPACITY TRACKER ============
             loadCapacityData() {
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || { maxCapacity: 50 };
                 const presentMembers = JSON.parse(localStorage.getItem('presentMembers')) || [];
@@ -10641,7 +10543,6 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 }).join('');
             }
 
-            // ============ DIGITAL CARD & BROADCAST ============
             updateVisitingCard() {
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {
                     gymName: 'SG FITNESS EVOLUTION',
@@ -10663,13 +10564,13 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
 
             shareVisitingCard() {
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
-                const message = `🏋️ *${settings.gymName || 'SG FITNESS'}*\n\n` +
+                const message = `ðŸ‹ï¸ *${settings.gymName || 'SG FITNESS'}*\n\n` +
                     `${settings.tagline || 'Transform Your Body, Transform Your Life'}\n\n` +
-                    `📞 Phone: +91 ${settings.phone || '9876543210'}\n` +
-                    `💬 WhatsApp: +91 ${settings.whatsapp || '919876543210'}\n` +
-                    `📍 Address: ${settings.address || 'Your Gym Address'}\n` +
-                    `⏰ Timing: ${settings.openTime || '05:00'} - ${settings.closeTime || '22:00'}\n\n` +
-                    `Join us today! 💪`;
+                    `ðŸ“ž Phone: +91 ${settings.phone || '9876543210'}\n` +
+                    `ðŸ’¬ WhatsApp: +91 ${settings.whatsapp || '919876543210'}\n` +
+                    `ðŸ“ Address: ${settings.address || 'Your Gym Address'}\n` +
+                    `â° Timing: ${settings.openTime || '05:00'} - ${settings.closeTime || '22:00'}\n\n` +
+                    `Join us today! ðŸ’ª`;
                 
                 const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -10694,7 +10595,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(fullMessage)}`;
                 window.open(whatsappUrl, '_blank');
                 
-                this.showToast(`✅ WhatsApp opened! Select your group → Send`, 'success');
+                this.showToast(`âœ… WhatsApp opened! Select your group â†’ Send`, 'success');
                 
                 // Clear the message box
                 document.getElementById('broadcastMessage').value = '';
@@ -10704,7 +10605,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
             copyGroupLink() {
                 const groupLink = 'https://chat.whatsapp.com/H7Bg7hXumjhCTJKhYQSFLZ';
                 navigator.clipboard.writeText(groupLink).then(() => {
-                    this.showToast('✅ Group link copied to clipboard!');
+                    this.showToast('âœ… Group link copied to clipboard!');
                 }).catch(() => {
                     // Fallback
                     const textArea = document.createElement('textarea');
@@ -10713,13 +10614,13 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                     textArea.select();
                     document.execCommand('copy');
                     document.body.removeChild(textArea);
-                    this.showToast('✅ Group link copied!');
+                    this.showToast('âœ… Group link copied!');
                 });
             }
 
             shareGroupLink() {
                 const groupLink = 'https://chat.whatsapp.com/H7Bg7hXumjhCTJKhYQSFLZ';
-                const message = `🏋️ *SG FITNESS EVOLUTION*\n\nJoin our WhatsApp group for daily updates, workout tips & announcements!\n\n👉 ${groupLink}`;
+                const message = `ðŸ‹ï¸ *SG FITNESS EVOLUTION*\n\nJoin our WhatsApp group for daily updates, workout tips & announcements!\n\nðŸ‘‰ ${groupLink}`;
                 const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
                 this.showToast('Opening WhatsApp to share...');
@@ -10727,10 +10628,10 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
 
             shareMedia(type) {
                 const mediaMessages = {
-                    workout: '💪 Check out this amazing workout routine!\n\n[Add your workout video link here]',
-                    exercise: '🏃 Exercise Guide for the Day!\n\n[Add your exercise guide link here]',
-                    promo: '🎉 Special Offer!\n\n[Add your promotion details here]',
-                    tips: '💡 Fitness Tip of the Day!\n\n[Add your fitness tips here]'
+                    workout: 'ðŸ’ª Check out this amazing workout routine!\n\n[Add your workout video link here]',
+                    exercise: 'ðŸƒ Exercise Guide for the Day!\n\n[Add your exercise guide link here]',
+                    promo: 'ðŸŽ‰ Special Offer!\n\n[Add your promotion details here]',
+                    tips: 'ðŸ’¡ Fitness Tip of the Day!\n\n[Add your fitness tips here]'
                 };
                 
                 const message = mediaMessages[type] || 'Check this out!';
@@ -10739,7 +10640,6 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 this.showToast('Opening WhatsApp...');
             }
 
-            // ============ ENQUIRY MANAGEMENT ============
             
             loadEnquiries() {
                 const saved = localStorage.getItem('gymEnquiries');
@@ -10790,7 +10690,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 document.getElementById('enquiryPlan').value = '';
                 document.getElementById('enquiryNotes').value = '';
 
-                this.showToast('✅ Enquiry added successfully!');
+                this.showToast('âœ… Enquiry added successfully!');
             }
 
             renderEnquiries() {
@@ -10848,15 +10748,15 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 const formattedPhone = this.formatPhoneNumber(mobile);
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 
-                const message = `🏋️ *${settings.gymName || 'SG FITNESS EVOLUTION'}*\n\n` +
+                const message = `ðŸ‹ï¸ *${settings.gymName || 'SG FITNESS EVOLUTION'}*\n\n` +
                     `${settings.tagline || 'Transform Your Body, Transform Your Life'}\n\n` +
                     `Dear ${name},\n\n` +
-                    `Thank you for your interest in our gym! 💪\n\n` +
-                    `📞 Phone: +91 ${settings.phone || '9876543210'}\n` +
-                    `💬 WhatsApp: +91 ${settings.whatsapp || '9876543210'}\n` +
-                    `📍 Address: ${settings.address || 'Your Gym Address'}\n` +
-                    `⏰ Timing: ${settings.openTime || '05:00'} - ${settings.closeTime || '22:00'}\n\n` +
-                    `Visit us today and start your fitness journey! 🎯`;
+                    `Thank you for your interest in our gym! ðŸ’ª\n\n` +
+                    `ðŸ“ž Phone: +91 ${settings.phone || '9876543210'}\n` +
+                    `ðŸ’¬ WhatsApp: +91 ${settings.whatsapp || '9876543210'}\n` +
+                    `ðŸ“ Address: ${settings.address || 'Your Gym Address'}\n` +
+                    `â° Timing: ${settings.openTime || '05:00'} - ${settings.closeTime || '22:00'}\n\n` +
+                    `Visit us today and start your fitness journey! ðŸŽ¯`;
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -10879,26 +10779,26 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const plans = JSON.parse(localStorage.getItem('gymPlans')) || [];
                 
-                let planDetails = `🏋️ *${settings.gymName || 'SG FITNESS EVOLUTION'}*\n\n`;
+                let planDetails = `ðŸ‹ï¸ *${settings.gymName || 'SG FITNESS EVOLUTION'}*\n\n`;
                 planDetails += `Dear ${name},\n\n`;
-                planDetails += `💪 *OUR GYM PLANS:*\n\n`;
+                planDetails += `ðŸ’ª *OUR GYM PLANS:*\n\n`;
                 
                 if (plans.length > 0) {
                     plans.forEach(plan => {
-                        planDetails += `✅ *${plan.name}*\n`;
+                        planDetails += `âœ… *${plan.name}*\n`;
                         planDetails += `   Duration: ${plan.duration} days\n`;
-                        planDetails += `   Price: ₹${plan.price}\n\n`;
+                        planDetails += `   Price: â‚¹${plan.price}\n\n`;
                     });
                 } else {
-                    planDetails += `✅ *1 Month* - ₹500\n`;
-                    planDetails += `✅ *3 Months* - ₹1200\n`;
-                    planDetails += `✅ *6 Months* - ₹2000\n`;
-                    planDetails += `✅ *12 Months* - ₹3500\n\n`;
+                    planDetails += `âœ… *1 Month* - â‚¹500\n`;
+                    planDetails += `âœ… *3 Months* - â‚¹1200\n`;
+                    planDetails += `âœ… *6 Months* - â‚¹2000\n`;
+                    planDetails += `âœ… *12 Months* - â‚¹3500\n\n`;
                 }
                 
-                planDetails += `📞 Contact: +91 ${settings.phone || '9876543210'}\n`;
-                planDetails += `📍 Address: ${settings.address || 'Your Gym Address'}\n\n`;
-                planDetails += `Join us today! 🎯`;
+                planDetails += `ðŸ“ž Contact: +91 ${settings.phone || '9876543210'}\n`;
+                planDetails += `ðŸ“ Address: ${settings.address || 'Your Gym Address'}\n\n`;
+                planDetails += `Join us today! ðŸŽ¯`;
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(planDetails)}`;
                 window.open(whatsappUrl, '_blank');
@@ -10913,7 +10813,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 }
 
                 // Ask for confirmation
-                if (!confirm(`🎉 Convert "${enquiry.name}" to Member?\n\nThis will:\n1. Open Add Member form with details filled\n2. You can set the plan and fees\n3. After adding, enquiry will be marked as converted`)) {
+                if (!confirm(`ðŸŽ‰ Convert "${enquiry.name}" to Member?\n\nThis will:\n1. Open Add Member form with details filled\n2. You can set the plan and fees\n3. After adding, enquiry will be marked as converted`)) {
                     return;
                 }
 
@@ -10946,7 +10846,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                             }, 3000);
                         }
 
-                        this.showToast('📝 Fill remaining details and click "Add Member"', 'success');
+                        this.showToast('ðŸ“ Fill remaining details and click "Add Member"', 'success');
                     }, 300);
                 }, 300);
             }
@@ -10974,9 +10874,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 }
             }
 
-            // ============ END ENQUIRY MANAGEMENT ============
 
-            // ============ WORKOUT & DIET PLANS ============
             loadWorkoutPlans() {
                 this.workoutPlans = JSON.parse(localStorage.getItem('gymWorkoutPlans')) || this.getDefaultWorkoutPlans();
                 this.renderWorkoutPlans();
@@ -11262,7 +11160,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                     <div class="plan-card">
                         <div class="plan-card-header">
                             <h4><i class="fas fa-dumbbell"></i> ${plan.name}</h4>
-                            <p>${plan.daysPerWeek} Days/Week • ${plan.level}</p>
+                            <p>${plan.daysPerWeek} Days/Week â€¢ ${plan.level}</p>
                         </div>
                         <div class="plan-card-body">
                             <p style="color: var(--gray); margin-bottom: 15px; font-size: 0.9rem;">${plan.description || ''}</p>
@@ -11310,7 +11208,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                     <div class="plan-card">
                         <div class="plan-card-header diet">
                             <h4><i class="fas fa-utensils"></i> ${plan.name}</h4>
-                            <p>${plan.goal} • ~${plan.calories} Cal/day</p>
+                            <p>${plan.goal} â€¢ ~${plan.calories} Cal/day</p>
                         </div>
                         <div class="plan-card-body">
                             <p style="color: var(--gray); margin-bottom: 15px; font-size: 0.9rem;">${plan.description || ''}</p>
@@ -11414,7 +11312,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 this.saveWorkoutPlans();
                 this.renderWorkoutPlans();
                 this.closeAllModals();
-                this.showToast('✅ Workout plan created successfully!');
+                this.showToast('âœ… Workout plan created successfully!');
             }
 
             showCreateDietModal() {
@@ -11493,7 +11391,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 this.saveDietPlans();
                 this.renderDietPlans();
                 this.closeAllModals();
-                this.showToast('✅ Diet plan created successfully!');
+                this.showToast('âœ… Diet plan created successfully!');
             }
 
             viewWorkoutPlan(id) {
@@ -11581,23 +11479,23 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
 
-                let message = `🏋️ *${gymName}*\n`;
-                message += `━━━━━━━━━━━━━━━━━\n\n`;
-                message += `💪 *WORKOUT PLAN*\n`;
+                let message = `ðŸ‹ï¸ *${gymName}*\n`;
+                message += `â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n\n`;
+                message += `ðŸ’ª *WORKOUT PLAN*\n`;
                 message += `*${plan.name}*\n`;
-                message += `📅 ${plan.daysPerWeek} Days/Week | ${plan.level}\n\n`;
+                message += `ðŸ“… ${plan.daysPerWeek} Days/Week | ${plan.level}\n\n`;
 
                 plan.days.forEach(day => {
                     message += `*${day.name}*\n`;
                     day.exercises.forEach(ex => {
-                        message += `• ${ex}\n`;
+                        message += `â€¢ ${ex}\n`;
                     });
                     message += `\n`;
                 });
 
-                message += `━━━━━━━━━━━━━━━━━\n`;
-                message += `Stay Consistent, Stay Strong! 💪\n`;
-                message += `📞 ${settings.phone || ''}`;
+                message += `â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n`;
+                message += `Stay Consistent, Stay Strong! ðŸ’ª\n`;
+                message += `ðŸ“ž ${settings.phone || ''}`;
 
                 if (mobile) {
                     const formattedPhone = this.formatPhoneNumber(mobile);
@@ -11615,23 +11513,23 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
 
-                let message = `🏋️ *${gymName}*\n`;
-                message += `━━━━━━━━━━━━━━━━━\n\n`;
-                message += `🍽️ *DIET PLAN*\n`;
+                let message = `ðŸ‹ï¸ *${gymName}*\n`;
+                message += `â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n\n`;
+                message += `ðŸ½ï¸ *DIET PLAN*\n`;
                 message += `*${plan.name}*\n`;
-                message += `🎯 ${plan.goal} | ~${plan.calories} Cal/day\n\n`;
+                message += `ðŸŽ¯ ${plan.goal} | ~${plan.calories} Cal/day\n\n`;
 
                 plan.meals.forEach(meal => {
                     message += `*${meal.name}*\n`;
                     meal.items.forEach(item => {
-                        message += `• ${item}\n`;
+                        message += `â€¢ ${item}\n`;
                     });
                     message += `\n`;
                 });
 
-                message += `━━━━━━━━━━━━━━━━━\n`;
-                message += `Eat Clean, Stay Lean! 🥗\n`;
-                message += `📞 ${settings.phone || ''}`;
+                message += `â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n`;
+                message += `Eat Clean, Stay Lean! ðŸ¥—\n`;
+                message += `ðŸ“ž ${settings.phone || ''}`;
 
                 if (mobile) {
                     const formattedPhone = this.formatPhoneNumber(mobile);
@@ -11658,7 +11556,6 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 this.showToast('Diet plan deleted');
             }
 
-            // ============ MEMBER SEARCH FOR ASSIGN ============
             searchMemberForAssign(query) {
                 const resultsDiv = document.getElementById('assignMemberResults');
                 
@@ -11771,7 +11668,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 // Clear selected member after assign
                 this.clearSelectedMember();
                 
-                this.showToast('✅ Plan assigned successfully!');
+                this.showToast('âœ… Plan assigned successfully!');
 
                 // Ask to share on WhatsApp
                 if (confirm(`Plan assigned to ${member.fullName}. Share on WhatsApp?`)) {
@@ -11842,43 +11739,43 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
 
-                let message = `🏋️ *${gymName}*\n`;
-                message += `━━━━━━━━━━━━━━━━━\n\n`;
-                message += `👤 *${member.fullName}*\n`;
-                message += `📋 Roll No: ${member.serialNumber}\n`;
-                message += `📅 Duration: ${member.assignedPlan.duration} Weeks\n\n`;
+                let message = `ðŸ‹ï¸ *${gymName}*\n`;
+                message += `â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n\n`;
+                message += `ðŸ‘¤ *${member.fullName}*\n`;
+                message += `ðŸ“‹ Roll No: ${member.serialNumber}\n`;
+                message += `ðŸ“… Duration: ${member.assignedPlan.duration} Weeks\n\n`;
 
                 if (workoutPlan) {
-                    message += `💪 *WORKOUT PLAN: ${workoutPlan.name}*\n`;
+                    message += `ðŸ’ª *WORKOUT PLAN: ${workoutPlan.name}*\n`;
                     message += `${workoutPlan.daysPerWeek} Days/Week | ${workoutPlan.level}\n\n`;
                     workoutPlan.days.forEach(day => {
                         message += `*${day.name}*\n`;
                         day.exercises.forEach(ex => {
-                            message += `• ${ex}\n`;
+                            message += `â€¢ ${ex}\n`;
                         });
                         message += `\n`;
                     });
                 }
 
                 if (dietPlan) {
-                    message += `🍽️ *DIET PLAN: ${dietPlan.name}*\n`;
+                    message += `ðŸ½ï¸ *DIET PLAN: ${dietPlan.name}*\n`;
                     message += `${dietPlan.goal} | ~${dietPlan.calories} Cal/day\n\n`;
                     dietPlan.meals.forEach(meal => {
                         message += `*${meal.name}*\n`;
                         meal.items.forEach(item => {
-                            message += `• ${item}\n`;
+                            message += `â€¢ ${item}\n`;
                         });
                         message += `\n`;
                     });
                 }
 
                 if (member.assignedPlan.notes) {
-                    message += `📝 *Trainer Notes:* ${member.assignedPlan.notes}\n\n`;
+                    message += `ðŸ“ *Trainer Notes:* ${member.assignedPlan.notes}\n\n`;
                 }
 
-                message += `━━━━━━━━━━━━━━━━━\n`;
-                message += `Stay Fit, Stay Strong! 💪\n`;
-                message += `📞 ${settings.phone || ''}`;
+                message += `â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n`;
+                message += `Stay Fit, Stay Strong! ðŸ’ª\n`;
+                message += `ðŸ“ž ${settings.phone || ''}`;
 
                 const formattedPhone = this.formatPhoneNumber(member.mobileNumber);
                 window.open(`https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`, '_blank');
@@ -11954,9 +11851,7 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 }
             }
 
-            // ============ END WORKOUT & DIET PLANS ============
 
-            // ============ END NEW FEATURES ============
 
             // Helper function to format phone number correctly
             formatPhoneNumber(phone) {
@@ -11993,13 +11888,13 @@ Ab aap bina kisi tension ke gym enjoy karein! 💪
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
                 
-                const message = `🏋️ *${gymName}*
+                const message = `ðŸ‹ï¸ *${gymName}*
 
 Dear *${memberName}*,
 
 Your gym membership is about to expire soon. Kindly renew your membership at the earliest to continue enjoying our services.
 
-Thank you! 🙏`;
+Thank you! ðŸ™`;
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -12032,7 +11927,7 @@ Thank you! 🙏`;
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
                 const formattedDate = new Date(expiryDate).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 
-                const message = `🏋️ *${gymName}*
+                const message = `ðŸ‹ï¸ *${gymName}*
 
 Dear *${memberName}*,
 
@@ -12040,7 +11935,7 @@ Your gym membership will expire on *${formattedDate}*.
 
 Kindly renew your membership at the earliest to continue enjoying our services.
 
-Thank you! 🙏`;
+Thank you! ðŸ™`;
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -12073,7 +11968,7 @@ Thank you! 🙏`;
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
                 const formattedDate = new Date(expiryDate).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 
-                const message = `🏋️ *${gymName}*
+                const message = `ðŸ‹ï¸ *${gymName}*
 
 Dear *${memberName}*,
 
@@ -12081,7 +11976,7 @@ Your gym membership will expire on *${formattedDate}*.
 
 Kindly renew your membership at the earliest to continue enjoying our services.
 
-Thank you! 🙏`;
+Thank you! ðŸ™`;
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -12106,13 +12001,13 @@ Thank you! 🙏`;
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
                 
-                const message = `🏋️ *${gymName}*
+                const message = `ðŸ‹ï¸ *${gymName}*
 
 Dear *${memberName}*,
 
 Your gym membership is about to expire soon. Kindly renew your membership at the earliest to continue enjoying our services.
 
-Thank you! 🙏`;
+Thank you! ðŸ™`;
                 
                 const smsMessage = `${gymName} - Dear ${memberName}, Your gym membership is about to expire soon. Kindly renew at the earliest. Thank you!`;
                 
@@ -12216,7 +12111,6 @@ Thank you! 🙏`;
                 return expiryDate < today;
             }
 
-            // ============ CLOUD SYNC METHODS ============
             initFirebase() {
                 // Check if Firebase config exists
                 const savedConfig = localStorage.getItem('firebaseConfig');
@@ -12363,7 +12257,7 @@ Thank you! 🙏`;
                     this.db.ref('gymData/attendance').set(attendanceObj)
                 ]).then(() => {
                     this.isSyncing = false;
-                    this.showToast('✅ Data synced to cloud!', 'success');
+                    this.showToast('âœ… Data synced to cloud!', 'success');
                 }).catch(err => {
                     this.isSyncing = false;
                     this.showToast('Sync failed: ' + err.message, 'error');
@@ -12408,7 +12302,6 @@ Thank you! 🙏`;
                 });
             }
 
-            // ============ NOTIFICATION CENTER ============
             loadNotifications() {
                 this.notifications = JSON.parse(localStorage.getItem('gymNotifications')) || [];
                 this.updateNotificationBadge();
@@ -12431,7 +12324,7 @@ Thank you! 🙏`;
                 if (dob.getMonth() + 1 === todayMonth && dob.getDate() === todayDate) {
                     this.addNotification({
                         type: 'birthday',
-                        title: `🎂 ${member.fullName}'s Birthday!`,
+                        title: `ðŸŽ‚ ${member.fullName}'s Birthday!`,
                         message: `Today is ${member.fullName}'s birthday. Send wishes!`,
                         memberId: member.id,
                         memberName: member.fullName,
@@ -12439,7 +12332,7 @@ Thank you! 🙏`;
                         rollNo: member.serialNumber
                     });
                     this.renderNotifications();
-                    this.showToast(`🎂 Today is ${member.fullName}'s Birthday!`, 'success');
+                    this.showToast(`ðŸŽ‚ Today is ${member.fullName}'s Birthday!`, 'success');
                 }
             }
 
@@ -12479,7 +12372,7 @@ Thank you! 🙏`;
                             this.notifications.unshift({
                                 id: Date.now() + Math.random(),
                                 type: 'birthday',
-                                title: `🎂 ${member.fullName}'s Birthday!`,
+                                title: `ðŸŽ‚ ${member.fullName}'s Birthday!`,
                                 message: `Today is ${member.fullName}'s birthday. Send wishes!`,
                                 memberId: member.id,
                                 memberName: member.fullName,
@@ -12506,7 +12399,7 @@ Thank you! 🙏`;
                         if (diffDays <= alertDays && diffDays >= 0) {
                             this.addNotification({
                                 type: 'expiry',
-                                title: `⚠️ ${member.fullName}'s Plan Expiring`,
+                                title: `âš ï¸ ${member.fullName}'s Plan Expiring`,
                                 message: diffDays === 0 ? 'Plan expires TODAY!' : `Plan expires in ${diffDays} day${diffDays > 1 ? 's' : ''}`,
                                 memberId: member.id,
                                 memberName: member.fullName,
@@ -12517,7 +12410,7 @@ Thank you! 🙏`;
                         } else if (diffDays < 0) {
                             this.addNotification({
                                 type: 'expiry',
-                                title: `❌ ${member.fullName}'s Plan Expired`,
+                                title: `âŒ ${member.fullName}'s Plan Expired`,
                                 message: `Plan expired ${Math.abs(diffDays)} day${Math.abs(diffDays) > 1 ? 's' : ''} ago`,
                                 memberId: member.id,
                                 memberName: member.fullName,
@@ -12710,13 +12603,10 @@ Thank you! 🙏`;
                 if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
                 const formattedPhone = '91' + cleanPhone;
                 
-<<<<<<< HEAD
-=======
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
                 const gymPhone = settings.phone || '9876543210';
                 
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 const expDate = new Date(expiryDate);
                 const today = new Date();
                 const diffDays = Math.ceil((expDate - today) / (1000 * 60 * 60 * 24));
@@ -12731,7 +12621,6 @@ Thank you! 🙏`;
                     statusText = `expires in ${diffDays} days`;
                 }
                 
-<<<<<<< HEAD
                 // Use template system
                 const message = this.applyTemplate('expiry', {
                     name: name,
@@ -12739,23 +12628,21 @@ Thank you! 🙏`;
                     validTill: formattedExpiry,
                     statusText: statusText
                 });
-=======
-                const message = `🏋️ *${gymName}*
+                const message = `ðŸ‹ï¸ *${gymName}*
 
 Dear *${name}*,
 
 This is a friendly reminder that your gym membership ${statusText}.
 
-📅 Expiry Date: ${formattedExpiry}
+ðŸ“… Expiry Date: ${formattedExpiry}
 
 Please renew your membership to continue enjoying our facilities and services.
 
-💪 Stay Fit, Stay Healthy!
+ðŸ’ª Stay Fit, Stay Healthy!
 
-📞 Contact: ${gymPhone}
+ðŸ“ž Contact: ${gymPhone}
 
-Thank you! 🙏`;
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
+Thank you! ðŸ™`;
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -12766,15 +12653,14 @@ Thank you! 🙏`;
             addPaymentNotification(member, amount, days) {
                 this.addNotification({
                     type: 'payment',
-                    title: `💰 Payment Received - ${member.fullName}`,
-                    message: `₹${amount} received for ${days} days plan`,
+                    title: `ðŸ’° Payment Received - ${member.fullName}`,
+                    message: `â‚¹${amount} received for ${days} days plan`,
                     memberId: member.id,
                     memberName: member.fullName,
                     rollNo: member.serialNumber
                 });
             }
 
-            // ============ END NOTIFICATION CENTER ============
 
             // Check for birthdays
             checkBirthdays() {
@@ -12797,7 +12683,7 @@ Thank you! 🙏`;
                 const membersList = members.map(m => `
                     <div style="background: #fff3e0; border-radius: 10px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                         <div>
-                            <h4 style="margin: 0; color: var(--dark);">🎂 ${m.fullName}</h4>
+                            <h4 style="margin: 0; color: var(--dark);">ðŸŽ‚ ${m.fullName}</h4>
                             <p style="margin: 5px 0 0; color: var(--gray); font-size: 0.9rem;">Roll No: ${m.serialNumber}</p>
                         </div>
                         <div class="msg-buttons">
@@ -12815,7 +12701,7 @@ Thank you! 🙏`;
                     <div id="birthdayPopup" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 10000; display: flex; justify-content: center; align-items: center; padding: 20px;">
                         <div style="background: white; padding: 25px; border-radius: 20px; max-width: 450px; width: 100%; max-height: 80vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
                             <div style="text-align: center; margin-bottom: 20px;">
-                                <div style="font-size: 4rem; margin-bottom: 10px;">🎂🎉</div>
+                                <div style="font-size: 4rem; margin-bottom: 10px;">ðŸŽ‚ðŸŽ‰</div>
                                 <h2 style="margin: 0; color: var(--primary);">Today's Birthdays!</h2>
                                 <p style="color: var(--gray); margin-top: 5px;">${members.length} member${members.length > 1 ? 's have' : ' has'} birthday today</p>
                             </div>
@@ -12836,32 +12722,29 @@ Thank you! 🙏`;
 
             sendBirthdayWish(mobile, name) {
                 const formattedPhone = this.formatPhoneNumber(mobile);
-<<<<<<< HEAD
                 
                 // Use template system
                 const message = this.applyTemplate('birthday', {
                     name: name,
                     mobile: mobile
                 });
-=======
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
                 
-                const message = `🎂 *Happy Birthday ${name}!* 🎉
+                const message = `ðŸŽ‚ *Happy Birthday ${name}!* ðŸŽ‰
 
-🏋️ *${gymName}* wishes you a very Happy Birthday!
+ðŸ‹ï¸ *${gymName}* wishes you a very Happy Birthday!
 
 May this special day bring you:
-✨ Good Health
-💪 Strength & Fitness
-🌟 Success in all your goals
+âœ¨ Good Health
+ðŸ’ª Strength & Fitness
+ðŸŒŸ Success in all your goals
 
 Stay fit, stay healthy! 
-Have a wonderful year ahead! 🎊
+Have a wonderful year ahead! ðŸŽŠ
 
 With best wishes,
-Team ${gymName} 💪`;
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
+Team ${gymName} ðŸ’ª`;
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
@@ -12870,7 +12753,6 @@ Team ${gymName} 💪`;
 
             sendBirthdaySMS(mobile, name) {
                 const formattedPhone = this.formatPhoneNumber(mobile);
-<<<<<<< HEAD
                 
                 // Use template system - remove emojis for SMS
                 let message = this.applyTemplate('birthday', {
@@ -12880,20 +12762,16 @@ Team ${gymName} 💪`;
                 message = message.replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]/gu, '').replace(/\*/g, '');
                 
                 const smsUrl = `sms:${formattedPhone}?body=${encodeURIComponent(message)}`;
-=======
                 const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
                 const gymName = settings.gymName || 'SG FITNESS EVOLUTION';
                 
                 const smsMessage = `Happy Birthday ${name}! ${gymName} wishes you good health, strength & fitness. Stay fit, stay healthy! Have a wonderful year ahead!`;
                 
                 const smsUrl = `sms:${formattedPhone}?body=${encodeURIComponent(smsMessage)}`;
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
                 window.open(smsUrl, '_blank');
                 this.showToast('Opening SMS with birthday wish...');
             }
 
-<<<<<<< HEAD
-            // ============ DUES CLEAR MESSAGE ============
             sendDuesClearWhatsApp(mobile, name, rollNo, amount, validTill) {
                 let cleanPhone = mobile.replace(/\D/g, '');
                 if (cleanPhone.startsWith('91') && cleanPhone.length > 10) cleanPhone = cleanPhone.substring(2);
@@ -12942,8 +12820,6 @@ Team ${gymName} 💪`;
                 this.showToast('Opening SMS with dues clear message...');
             }
 
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
             saveFirebaseConfig() {
                 const apiKey = document.getElementById('firebaseApiKey').value.trim();
                 const projectId = document.getElementById('firebaseProjectId').value.trim();
@@ -12990,7 +12866,6 @@ Team ${gymName} 💪`;
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-<<<<<<< HEAD
             // Show install buttons when install is available
             showInstallButtons();
         });
@@ -13024,16 +12899,16 @@ Team ${gymName} 💪`;
                     if (result.outcome === 'accepted') {
                         console.log('App installed');
                         hideInstallButtons();
-                        alert('🎉 App installed successfully! Ab aap ise home screen se open kar sakte hain.');
+                        alert('ðŸŽ‰ App installed successfully! Ab aap ise home screen se open kar sakte hain.');
                     }
                     deferredPrompt = null;
                 });
             } else {
                 // Fallback for browsers that don't support install prompt
-                alert('📱 App Install करने के लिए:\n\n' +
-                      '📌 Chrome/Edge: Menu (⋮) → "Install App" या "Add to Home Screen"\n\n' +
-                      '📌 iPhone Safari: Share button (□↑) → "Add to Home Screen"\n\n' +
-                      '📌 Android Chrome: Menu → "Add to Home Screen"');
+                alert('ðŸ“± App Install à¤•à¤°à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤:\n\n' +
+                      'ðŸ“Œ Chrome/Edge: Menu (â‹®) â†’ "Install App" à¤¯à¤¾ "Add to Home Screen"\n\n' +
+                      'ðŸ“Œ iPhone Safari: Share button (â–¡â†‘) â†’ "Add to Home Screen"\n\n' +
+                      'ðŸ“Œ Android Chrome: Menu â†’ "Add to Home Screen"');
             }
         }
 
@@ -13061,8 +12936,6 @@ Team ${gymName} 💪`;
         // Check on page load
         document.addEventListener('DOMContentLoaded', () => {
             checkIfInstalled();
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
         });
 
         function installApp() {
@@ -13071,21 +12944,19 @@ Team ${gymName} 💪`;
                 deferredPrompt.userChoice.then((result) => {
                     if (result.outcome === 'accepted') {
                         console.log('App installed');
-                        alert('🎉 App installed successfully!');
+                        alert('ðŸŽ‰ App installed successfully!');
                     }
                     deferredPrompt = null;
                 });
             } else {
                 // Fallback for browsers that don't support install prompt
-                alert('📱 App Install करने के लिए:\n\n' +
-                      '📌 Chrome/Edge: Menu (⋮) → "Install App" या "Add to Home Screen"\n\n' +
-                      '📌 iPhone Safari: Share button → "Add to Home Screen"\n\n' +
-                      '📌 Android Chrome: Menu → "Add to Home Screen"');
+                alert('ðŸ“± App Install à¤•à¤°à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤:\n\n' +
+                      'ðŸ“Œ Chrome/Edge: Menu (â‹®) â†’ "Install App" à¤¯à¤¾ "Add to Home Screen"\n\n' +
+                      'ðŸ“Œ iPhone Safari: Share button â†’ "Add to Home Screen"\n\n' +
+                      'ðŸ“Œ Android Chrome: Menu â†’ "Add to Home Screen"');
             }
         }
-<<<<<<< HEAD
 
-        // ==================== LOGIN SYSTEM FUNCTIONS ====================
         
         // Current logged in member data
         let currentMember = null;
@@ -13227,7 +13098,7 @@ Team ${gymName} 💪`;
             { text: "Fitness is not about being better than someone else. It's about being better than you used to be.", author: "Compete with Yourself!" },
             { text: "The pain you feel today will be the strength you feel tomorrow.", author: "Keep Pushing!" },
             { text: "Don't wish for a good body, work for it!", author: "Action is Key!" },
-            { text: "Sweat is just fat crying.", author: "Let it Cry! 💪" },
+            { text: "Sweat is just fat crying.", author: "Let it Cry! ðŸ’ª" },
             { text: "No pain, no gain. Shut up and train!", author: "Beast Mode!" },
             { text: "The gym is my therapy.", author: "Mental & Physical Health!" },
             { text: "Wake up. Work out. Look hot. Kick ass.", author: "Daily Routine!" },
@@ -13236,37 +13107,37 @@ Team ${gymName} 💪`;
             { text: "Excuses don't burn calories.", author: "Just Do It!" },
             { text: "Be stronger than your excuses.", author: "No Excuses!" },
             { text: "The only way to finish is to start.", author: "Begin Now!" },
-            { text: "आज का दर्द, कल की ताकत है।", author: "हिंदी में मोटिवेशन!" },
-            { text: "कमज़ोरी से मज़बूती तक का सफ़र gym से होकर जाता है।", author: "💪 जय हिंद!" },
-            { text: "शरीर बनाना है तो मेहनत करनी पड़ेगी।", author: "Hard Work!" }
+            { text: "à¤†à¤œ à¤•à¤¾ à¤¦à¤°à¥à¤¦, à¤•à¤² à¤•à¥€ à¤¤à¤¾à¤•à¤¤ à¤¹à¥ˆà¥¤", author: "à¤¹à¤¿à¤‚à¤¦à¥€ à¤®à¥‡à¤‚ à¤®à¥‹à¤Ÿà¤¿à¤µà¥‡à¤¶à¤¨!" },
+            { text: "à¤•à¤®à¤œà¤¼à¥‹à¤°à¥€ à¤¸à¥‡ à¤®à¤œà¤¼à¤¬à¥‚à¤¤à¥€ à¤¤à¤• à¤•à¤¾ à¤¸à¤«à¤¼à¤° gym à¤¸à¥‡ à¤¹à¥‹à¤•à¤° à¤œà¤¾à¤¤à¤¾ à¤¹à¥ˆà¥¤", author: "ðŸ’ª à¤œà¤¯ à¤¹à¤¿à¤‚à¤¦!" },
+            { text: "à¤¶à¤°à¥€à¤° à¤¬à¤¨à¤¾à¤¨à¤¾ à¤¹à¥ˆ à¤¤à¥‹ à¤®à¥‡à¤¹à¤¨à¤¤ à¤•à¤°à¤¨à¥€ à¤ªà¤¡à¤¼à¥‡à¤—à¥€à¥¤", author: "Hard Work!" }
         ];
 
         // Fitness Tips Array
         const fitnessTips = [
-            "Drink at least 8 glasses of water daily to stay hydrated during workouts! 💧",
-            "Never skip your warm-up! It prevents injuries and improves performance. 🔥",
-            "Get 7-8 hours of sleep. Muscles recover and grow during rest! 😴",
-            "Eat protein within 30 minutes after your workout for better recovery! 🍗",
-            "Don't skip leg day! Strong legs = Strong foundation! 🦵",
-            "Consistency beats intensity. Show up every day! 📅",
-            "Take deep breaths between sets. Oxygen helps muscle recovery! 🌬️",
-            "Stretch after every workout to improve flexibility! 🧘",
-            "Track your progress. What gets measured, gets improved! 📊",
-            "Mix up your routine every 4-6 weeks to avoid plateaus! 🔄",
-            "Avoid sugary drinks. They add empty calories! 🚫",
-            "Eat breakfast within an hour of waking up to boost metabolism! 🍳",
-            "Practice proper form over heavy weights to avoid injuries! ✅",
-            "Include both cardio and strength training in your routine! 🏃💪",
-            "Mental health matters. Exercise releases endorphins! 🧠😊"
+            "Drink at least 8 glasses of water daily to stay hydrated during workouts! ðŸ’§",
+            "Never skip your warm-up! It prevents injuries and improves performance. ðŸ”¥",
+            "Get 7-8 hours of sleep. Muscles recover and grow during rest! ðŸ˜´",
+            "Eat protein within 30 minutes after your workout for better recovery! ðŸ—",
+            "Don't skip leg day! Strong legs = Strong foundation! ðŸ¦µ",
+            "Consistency beats intensity. Show up every day! ðŸ“…",
+            "Take deep breaths between sets. Oxygen helps muscle recovery! ðŸŒ¬ï¸",
+            "Stretch after every workout to improve flexibility! ðŸ§˜",
+            "Track your progress. What gets measured, gets improved! ðŸ“Š",
+            "Mix up your routine every 4-6 weeks to avoid plateaus! ðŸ”„",
+            "Avoid sugary drinks. They add empty calories! ðŸš«",
+            "Eat breakfast within an hour of waking up to boost metabolism! ðŸ³",
+            "Practice proper form over heavy weights to avoid injuries! âœ…",
+            "Include both cardio and strength training in your routine! ðŸƒðŸ’ª",
+            "Mental health matters. Exercise releases endorphins! ðŸ§ ðŸ˜Š"
         ];
 
         // Get Greeting based on time
         function getGreeting() {
             const hour = new Date().getHours();
-            if (hour < 12) return "Good Morning! 🌅";
-            if (hour < 17) return "Good Afternoon! ☀️";
-            if (hour < 21) return "Good Evening! 🌆";
-            return "Good Night! 🌙";
+            if (hour < 12) return "Good Morning! ðŸŒ…";
+            if (hour < 17) return "Good Afternoon! â˜€ï¸";
+            if (hour < 21) return "Good Evening! ðŸŒ†";
+            return "Good Night! ðŸŒ™";
         }
 
         // Get Random Quote
@@ -13359,17 +13230,17 @@ Team ${gymName} 💪`;
             if (daysLeft < 0) {
                 daysLeftEl.textContent = 'Expired';
                 daysLeftEl.style.color = '#ef4444';
-                statusEl.textContent = '❌ Expired';
+                statusEl.textContent = 'âŒ Expired';
                 statusEl.classList.remove('active');
                 statusEl.classList.add('expired');
             } else if (daysLeft <= 7) {
                 daysLeftEl.textContent = daysLeft + ' Days';
                 daysLeftEl.style.color = '#f59e0b';
-                statusEl.textContent = '⚠️ Expiring Soon';
+                statusEl.textContent = 'âš ï¸ Expiring Soon';
             } else {
                 daysLeftEl.textContent = daysLeft + ' Days';
                 daysLeftEl.style.color = '#10b981';
-                statusEl.textContent = '✅ Active';
+                statusEl.textContent = 'âœ… Active';
             }
             
             // Attendance this month
@@ -13384,7 +13255,7 @@ Team ${gymName} 💪`;
             
             // Dues
             const dues = currentMember.dueAmount || 0;
-            document.getElementById('dashboardDues').textContent = '₹' + dues;
+            document.getElementById('dashboardDues').textContent = 'â‚¹' + dues;
             document.getElementById('dashboardDues').style.color = dues > 0 ? '#ef4444' : '#10b981';
             
             // Calculate and display streak
@@ -13470,7 +13341,7 @@ Team ${gymName} 💪`;
             paymentsDiv.innerHTML = payments.map((payment, index) => `
                 <div class="member-payment-card">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                        <strong style="color: #10b981; font-size: 1.4rem;">₹${payment.amount}</strong>
+                        <strong style="color: #10b981; font-size: 1.4rem;">â‚¹${payment.amount}</strong>
                         <span style="color: #94a3b8; font-size: 0.85rem; background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px;">${payment.date}</span>
                     </div>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap; font-size: 0.85rem; color: #94a3b8;">
@@ -13492,7 +13363,7 @@ Team ${gymName} 💪`;
                     <div style="text-align: center; padding: 30px; color: #94a3b8;">
                         <i class="fas fa-calendar-times" style="font-size: 3rem; color: #10b981; margin-bottom: 15px;"></i>
                         <p>No attendance records yet.</p>
-                        <p style="font-size: 0.9rem; margin-top: 10px;">Start your fitness journey today! 💪</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">Start your fitness journey today! ðŸ’ª</p>
                     </div>
                 `;
                 return;
@@ -13511,7 +13382,7 @@ Team ${gymName} 💪`;
                     `).join('')}
                 </div>
                 <div style="text-align: center; padding: 15px; background: rgba(16,185,129,0.1); border-radius: 12px; border: 1px solid rgba(16,185,129,0.3);">
-                    <span style="color: #10b981; font-weight: 600; font-size: 1.1rem;">🏆 Total Attendance: ${attendance.length} Days</span>
+                    <span style="color: #10b981; font-weight: 600; font-size: 1.1rem;">ðŸ† Total Attendance: ${attendance.length} Days</span>
                 </div>
             `;
         }
@@ -13521,7 +13392,7 @@ Team ${gymName} 💪`;
             const settings = JSON.parse(localStorage.getItem('gymSettings')) || {};
             
             document.getElementById('gymInfoName').textContent = settings.gymName || 'SG FITNESS EVOLUTION';
-            document.getElementById('gymInfoAddress').textContent = settings.address || 'Your Fitness Destination 🏋️';
+            document.getElementById('gymInfoAddress').textContent = settings.address || 'Your Fitness Destination ðŸ‹ï¸';
             document.getElementById('gymInfoPhone').innerHTML = `<i class="fas fa-phone"></i> <span>Contact: ${settings.phone || '-'}</span>`;
         }
 
@@ -13581,9 +13452,6 @@ Team ${gymName} 💪`;
             checkExistingLogin();
         });
 
-        // ==================== END LOGIN SYSTEM FUNCTIONS ====================
-=======
->>>>>>> dd89e808b3540e9da5f52aebd36875a4117a465d
     </script>
 </body>
 </html>
