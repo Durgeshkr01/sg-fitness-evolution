@@ -4409,6 +4409,9 @@
                 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; margin-bottom: 25px;">
                     <h3 style="margin: 0 0 10px 0;"><i class="fas fa-info-circle"></i> Dynamic Message Templates</h3>
                     <p style="margin: 0; opacity: 0.9;">Select a message type to edit. Use placeholders like {name}, {date}, {amount} etc.</p>
+                    <div id="activeMessageDisplay" style="margin-top: 15px; padding: 12px; background: rgba(255,255,255,0.15); border-radius: 8px; display: none;">
+                        <i class="fas fa-check-circle"></i> <strong>Currently Editing:</strong> <span id="activeMessageName">None</span>
+                    </div>
                 </div>
                 
                 <!-- Message Type Selector -->
@@ -6475,6 +6478,9 @@
 
                 // Update dues
                 member.dueAmount = oldDues - payAmount;
+                
+                // Determine payment type based on whether dues are fully cleared
+                const paymentType = member.dueAmount === 0 ? 'Dues Cleared' : 'Dues Payment';
 
                 // Add to payment history
                 if (!member.paymentHistory) {
@@ -6485,9 +6491,11 @@
                 member.paymentHistory.push({
                     date: today.toISOString().split('T')[0],
                     amount: payAmount,
-                    type: 'Dues Payment',
+                    type: paymentType,
                     mode: paymentMode,
-                    note: `Dues payment - Previous: ₹${oldDues}, Paid: ₹${payAmount}, Remaining: ₹${member.dueAmount}`,
+                    note: member.dueAmount === 0 
+                        ? `✅ All dues cleared! Previous: ₹${oldDues}, Paid: ₹${payAmount}` 
+                        : `Dues payment - Previous: ₹${oldDues}, Paid: ₹${payAmount}, Remaining: ₹${member.dueAmount}`,
                     timestamp: today.toISOString()
                 });
 
@@ -6502,49 +6510,129 @@
 
                 // Send WhatsApp receipt message
                 const receiptDate = today.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-                let receiptMsg = `🧾 *SG FITNESS EVOLUTION*\n`;
-                receiptMsg += `━━━━━━━━━━━━━━━━━━━━\n`;
-                receiptMsg += `📋 *DUES PAYMENT RECEIPT*\n`;
-                receiptMsg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
-                receiptMsg += `👤 *Member:* ${member.fullName}\n`;
-                receiptMsg += `🔢 *Roll No:* ${member.serialNumber}\n`;
-                receiptMsg += `📅 *Date:* ${receiptDate}\n\n`;
+                let receiptMsg = `Namaste *${member.fullName}* ji 🙏\n\n`;
+                receiptMsg += `*SG FITNESS EVOLUTION*\n`;
+                receiptMsg += `🧳 *Dues Payment Receipt*\n\n`;
+                receiptMsg += `📅 Date: ${receiptDate}\n`;
+                receiptMsg += `🔢 Roll No: ${member.serialNumber}\n\n`;
                 receiptMsg += `💰 *Payment Details:*\n`;
-                receiptMsg += `├ Previous Dues: ₹${oldDues.toLocaleString()}\n`;
-                receiptMsg += `├ Amount Paid: ₹${payAmount.toLocaleString()}\n`;
-                receiptMsg += `├ Payment Mode: ${paymentMode}\n`;
+                receiptMsg += `• Pichle Dues: ₹${oldDues.toLocaleString()}\n`;
+                receiptMsg += `• Abhi Paid: ₹${payAmount.toLocaleString()}\n`;
+                receiptMsg += `• Mode: ${paymentMode}\n`;
                 
                 if (member.dueAmount > 0) {
-                    receiptMsg += `└ ⚠️ *Remaining Dues: ₹${member.dueAmount.toLocaleString()}*\n\n`;
-                    // Use dynamic dues reminder message
-                    const duesMsg = this.getFormattedMessage('duesReminder', {
-                        name: member.fullName,
-                        amount: member.dueAmount.toLocaleString()
-                    });
-                    receiptMsg += `${duesMsg}\n`;
+                    receiptMsg += `\n⚠️ *Baki Dues: ₹${member.dueAmount.toLocaleString()}*\n\n`;
+                    receiptMsg += `Kripya apni suvidha anusaar baki amount pay kar dein.\n`;
+                    receiptMsg += `💳 Payment: Cash / UPI / Online\n`;
                 } else {
-                    receiptMsg += `└ ✅ *Remaining Dues: ₹0*\n\n`;
-                    // Use dynamic dues cleared message
-                    const clearedMsg = this.getFormattedMessage('duesCleared', {
-                        name: member.fullName
-                    });
-                    receiptMsg += `${clearedMsg}\n`;
+                    receiptMsg += `\n✅ *Baki Dues: ₹0 (All Clear!)*\n\n`;
+                    receiptMsg += `🎉 Badhai ho! Aapke sabhi dues clear ho gaye!\n`;
                 }
                 
-                receiptMsg += `\n━━━━━━━━━━━━━━━━━━━━\n`;
-                receiptMsg += `💪 Thank You for being with SG FITNESS!`;
+                receiptMsg += `\nAapka dhanyavaad! 🙏\n`;
+                receiptMsg += `_Gym mein milte hain!_ 🏋️💪`;
                 
-                // Open WhatsApp with receipt
-                const whatsappUrl = `https://wa.me/91${member.phone}?text=${encodeURIComponent(receiptMsg)}`;
-                window.open(whatsappUrl, '_blank');
+                // Store receipt message for later use
+                this.lastDuesReceiptMsg = receiptMsg;
+                this.lastDuesMemberId = memberId;
 
                 if (member.dueAmount === 0) {
-                    // Use dynamic message for toast
-                    const clearedToast = this.getFormattedMessage('duesCleared', { name: member.fullName });
-                    this.showToast(clearedToast, 'success');
+                    // Dues fully cleared - show options modal
+                    this.showDuesClearedOptions(memberId, receiptMsg, payAmount);
                 } else {
+                    // Partial payment - open WhatsApp directly
+                    const whatsappUrl = `https://wa.me/91${member.phone}?text=${encodeURIComponent(receiptMsg)}`;
+                    window.open(whatsappUrl, '_blank');
                     this.showToast(`✅ ₹${payAmount} dues paid! Remaining: ₹${member.dueAmount}`, 'success');
                 }
+            }
+            
+            // Show options after dues are fully cleared
+            showDuesClearedOptions(memberId, receiptMsg, payAmount) {
+                const member = this.members.find(m => m.id === memberId);
+                if (!member) return;
+                
+                const existingModal = document.getElementById('duesClearedModal');
+                if (existingModal) existingModal.remove();
+                
+                // Store memberId for button handlers
+                this.lastDuesClearedMemberId = memberId;
+                
+                const modal = document.createElement('div');
+                modal.id = 'duesClearedModal';
+                modal.className = 'modal';
+                modal.style.display = 'flex';
+                modal.innerHTML = `
+                    <div class="modal-content" style="max-width: 450px; text-align: center;">
+                        <div class="modal-header" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white;">
+                            <h2 style="margin: 0;"><i class="fas fa-check-circle"></i> Dues Cleared!</h2>
+                        </div>
+                        <div class="modal-body" style="padding: 30px;">
+                            <div style="font-size: 4rem; margin-bottom: 20px;">🎉</div>
+                            <h3 style="color: #28a745; margin-bottom: 15px;">All Dues Cleared Successfully!</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 25px;">
+                                <strong>${member.fullName}</strong> has paid ₹${payAmount.toLocaleString()}<br>
+                                All dues are now cleared!
+                            </p>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <button onclick="gym.sendDuesClearedWhatsApp()" class="btn-primary" style="padding: 15px 25px; background: #25D366; border: none; font-size: 1rem;">
+                                    <i class="fab fa-whatsapp"></i> Send WhatsApp Message
+                                </button>
+                                <button onclick="gym.sendDuesClearedSMS()" class="btn-primary" style="padding: 15px 25px; background: #007bff; border: none; font-size: 1rem;">
+                                    <i class="fas fa-sms"></i> Send SMS Message
+                                </button>
+                                <button onclick="document.getElementById('duesClearedModal').remove()" class="btn-secondary" style="padding: 12px 25px;">
+                                    <i class="fas fa-times"></i> Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                
+                // Show success toast
+                this.showToast('🎉 All dues cleared successfully!', 'success');
+            }
+            
+            // Send WhatsApp message for dues cleared
+            sendDuesClearedWhatsApp() {
+                const memberId = this.lastDuesClearedMemberId;
+                const member = this.members.find(m => m.id === memberId);
+                if (!member) {
+                    this.showToast('Member not found', 'error');
+                    return;
+                }
+                
+                let cleanPhone = member.phone.replace(/\D/g, '');
+                if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
+                
+                const clearedMsg = this.getFormattedMessage('duesCleared', { name: member.fullName });
+                const whatsappUrl = `https://wa.me/91${cleanPhone}?text=${encodeURIComponent(clearedMsg)}`;
+                window.open(whatsappUrl, '_blank');
+                
+                document.getElementById('duesClearedModal')?.remove();
+                this.showToast('Opening WhatsApp...', 'success');
+            }
+            
+            // Send SMS message for dues cleared
+            sendDuesClearedSMS() {
+                const memberId = this.lastDuesClearedMemberId;
+                const member = this.members.find(m => m.id === memberId);
+                if (!member) {
+                    this.showToast('Member not found', 'error');
+                    return;
+                }
+                
+                let cleanPhone = member.phone.replace(/\D/g, '');
+                if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
+                
+                const clearedMsg = this.getFormattedMessage('duesCleared', { name: member.fullName });
+                const smsUrl = `sms:${cleanPhone}?body=${encodeURIComponent(clearedMsg)}`;
+                window.open(smsUrl, '_blank');
+                
+                document.getElementById('duesClearedModal')?.remove();
+                this.showToast('Opening SMS...', 'success');
             }
 
             editExpiryDate(memberId) {
@@ -7613,6 +7701,7 @@ Contact: ${gymPhone}`;
                             <div style="border-top: 1px solid #ddd; padding-top: 15px; margin-top: 15px;">
                                 <p style="margin: 8px 0;"><strong>Plan:</strong> ${payment.days} Days</p>
                                 <p style="margin: 8px 0; font-size: 1.2rem; color: var(--success);"><strong>Amount Paid:</strong> ₹${payment.amount}</p>
+                                ${payment.dueAmount > 0 ? `<p style="margin: 8px 0; font-size: 1.1rem; color: #dc3545;"><strong>⚠️ Pending Dues:</strong> ₹${payment.dueAmount}</p>` : ''}
                                 <p style="margin: 8px 0;"><strong>Payment Mode:</strong> ${payment.mode === 'Cash' ? '💵' : payment.mode === 'UPI' ? '📱' : payment.mode === 'Card' ? '💳' : '🏦'} ${payment.mode || 'Cash'}</p>
                                 <p style="margin: 8px 0;"><strong>Valid Till:</strong> ${this.formatDate(payment.newExpiry)}</p>
                             </div>
@@ -7626,10 +7715,10 @@ Contact: ${gymPhone}`;
                         <p style="color: var(--gray); margin-bottom: 15px;">Send bill to member:</p>
                         
                         <div class="msg-buttons" style="justify-content: center; margin-bottom: 20px;">
-                            <button class="btn-whatsapp" onclick="gym.sendBillWhatsApp('${member.mobileNumber}', '${member.fullName}', '${member.serialNumber}', ${payment.days}, ${payment.amount}, '${payment.newExpiry}', '${payment.time || ''}')" style="padding: 12px 25px;">
+                            <button class="btn-whatsapp" onclick="gym.sendBillWhatsApp('${member.mobileNumber}', '${member.fullName}', '${member.serialNumber}', ${payment.days}, ${payment.amount}, '${payment.newExpiry}', '${payment.time || ''}', ${payment.dueAmount || 0})" style="padding: 12px 25px;">
                                 <i class="fab fa-whatsapp"></i> WhatsApp
                             </button>
-                            <button class="btn-sms" onclick="gym.sendBillSMS('${member.mobileNumber}', '${member.fullName}', '${member.serialNumber}', ${payment.days}, ${payment.amount}, '${payment.newExpiry}', '${payment.time || ''}')" style="padding: 12px 25px;">
+                            <button class="btn-sms" onclick="gym.sendBillSMS('${member.mobileNumber}', '${member.fullName}', '${member.serialNumber}', ${payment.days}, ${payment.amount}, '${payment.newExpiry}', '${payment.time || ''}', ${payment.dueAmount || 0})" style="padding: 12px 25px;">
                                 <i class="fas fa-sms"></i> SMS
                             </button>
                         </div>
@@ -7643,7 +7732,7 @@ Contact: ${gymPhone}`;
                 document.getElementById('paymentContent').innerHTML = billHTML;
             }
 
-            sendBillWhatsApp(mobile, name, rollNo, days, amount, validTill, time) {
+            sendBillWhatsApp(mobile, name, rollNo, days, amount, validTill, time, dues = 0) {
                 let cleanPhone = mobile.replace(/\D/g, '');
                 if (cleanPhone.startsWith('91') && cleanPhone.length > 10) cleanPhone = cleanPhone.substring(2);
                 if (cleanPhone.startsWith('0')) cleanPhone = cleanPhone.substring(1);
@@ -7658,28 +7747,31 @@ Contact: ${gymPhone}`;
                 const timeStr = time ? ` at ${time}` : '';
                 const formattedValidTill = new Date(validTill).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 
-                const message = `🧾 *PAYMENT RECEIPT*
-
-🏋️ *${gymName}*
-${gymAddress}
-
-*Roll No:* ${rollNo}
-*Name:* ${name}
-*Date:* ${today}${timeStr}
-
-*Plan:* ${days} Days
-*Amount Paid:* Rs.${amount}
-*Valid Till:* ${formattedValidTill}
-
-Thank you for choosing us! 💪
-📞 ${gymPhone}`;
+                let message = `Namaste *${name}* ji 🙏\n\n`;
+                message += `*${gymName}*\n`;
+                message += `🧾 *Payment Receipt*\n\n`;
+                message += `📅 Date: ${today}${timeStr}\n`;
+                message += `🔢 Roll No: ${rollNo}\n\n`;
+                message += `💰 *Details:*\n`;
+                message += `• Plan: ${days} Days\n`;
+                message += `• Amount Paid: Rs.${amount}\n`;
+                message += `• Valid Till: ${formattedValidTill}\n`;
+                
+                if (dues > 0) {
+                    message += `\n⚠️ *Pending Dues: Rs.${dues}*\n`;
+                    message += `Kripya apni suvidha anusaar dues clear kar dein.\n`;
+                }
+                
+                message += `\nAapka dhanyavaad! 🙏\n`;
+                message += `📞 ${gymPhone}\n`;
+                message += `_Gym mein milte hain!_ 💪`;
                 
                 const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
                 this.showToast('Opening WhatsApp with bill...');
             }
 
-            sendBillSMS(mobile, name, rollNo, days, amount, validTill, time) {
+            sendBillSMS(mobile, name, rollNo, days, amount, validTill, time, dues = 0) {
                 let cleanPhone = mobile.replace(/\D/g, '');
                 if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
                 
@@ -7689,7 +7781,11 @@ Thank you for choosing us! 💪
                 const timeStr = time ? ` at ${time}` : '';
                 const formattedValidTill = new Date(validTill).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 
-                const smsMessage = `PAYMENT RECEIPT - ${gymName}. Roll No: ${rollNo}, Name: ${name}, Date: ${today}${timeStr}, Plan: ${days} Days, Amount: Rs.${amount}, Valid Till: ${formattedValidTill}. Thank you!`;
+                let smsMessage = `PAYMENT RECEIPT - ${gymName}. Roll No: ${rollNo}, Name: ${name}, Date: ${today}${timeStr}, Plan: ${days} Days, Amount: Rs.${amount}, Valid Till: ${formattedValidTill}.`;
+                if (dues > 0) {
+                    smsMessage += ` Pending Dues: Rs.${dues}.`;
+                }
+                smsMessage += ` Thank you!`;
                 
                 const smsUrl = `sms:${cleanPhone}?body=${encodeURIComponent(smsMessage)}`;
                 window.open(smsUrl, '_blank');
@@ -8745,13 +8841,13 @@ Thank you for choosing us! 💪
             // ============ MESSAGE SETTINGS ============
             getDefaultMessages() {
                 return {
-                    expiredMember: '🔴 Dear {name}, your gym membership expired on {date} ({days} days ago). Please renew to continue your fitness journey! 💪',
-                    expiringSoon: '⚠️ Hi {name}, your gym membership will expire in {days} days on {date}. Renew now to avoid any break in your fitness routine! 🏋️',
-                    duesReminder: '💰 Hi {name}, you have pending dues of ₹{amount}. Please clear your dues at your earliest convenience. Thank you! 🙏',
-                    duesCleared: '✅ Great news {name}! All your dues have been cleared. Thank you for your payment! Keep up the great workout! 💪',
-                    paymentConfirm: '🎉 Thank you {name}! Payment of ₹{amount} received successfully. Your membership is valid until {expiry}. Stay fit! 🏆',
-                    newAdmission: '🎉 Welcome to SG FITNESS, {name}! 🏋️\n\nYour membership starts from {date} and is valid until {expiry}.\nAmount Paid: ₹{amount}\n\nLet\'s achieve your fitness goals together! 💪',
-                    birthdayWish: '🎂 Happy Birthday {name}! 🎉\n\nWishing you a fantastic birthday filled with joy and happiness! Keep crushing your fitness goals! 💪🏆'
+                    expiredMember: 'Namaste *{name}* ji 🙏\n\n*SG FITNESS EVOLUTION* se aapko yaad aa rahi hai!\n\nAapki membership *{date}* ko expire ho gayi thi.\n\n🏋️ Fitness ka safar ruk nahi chahiye! Aaj hi renew karein aur apne goals achieve karein.\n\nHum aapka intezaar kar rahe hain! 💪\n\n_Contact: Gym Reception_',
+                    expiringSoon: 'Namaste *{name}* ji 🙏\n\n*SG FITNESS EVOLUTION* ki taraf se reminder!\n\n⏰ Aapki membership *{days} din* mein (*{date}*) expire ho rahi hai.\n\n✅ Abhi renew karein aur:\n• Fitness streak continue rakhein\n• Gym facilities enjoy karein\n• Apne goals achieve karein!\n\nGym visit karein ya call karein! 📲\n\n_Stay Fit, Stay Healthy!_ 💪',
+                    duesReminder: 'Namaste *{name}* ji 🙏\n\n*SG FITNESS EVOLUTION* se ek gentle reminder.\n\n📋 Aapke account mein *₹{amount}* dues pending hain.\n\nKripya apni suvidha anusaar payment kar dein.\n\n💳 Payment: Cash / UPI / Online\n\nAapka saath humare liye bahut important hai! ✨\n\n_Thank you!_ 🙏',
+                    duesCleared: 'Namaste *{name}* ji 🙏\n\n🎉 *Badhai ho!*\n\nAapke sabhi dues clear ho gaye hain!\n\n✅ Payment successfully received.\n\nAapka dhanyavaad! Gym mein milte hain! 🏋️\n\n_Keep crushing your goals!_ 💪\n\n*SG FITNESS EVOLUTION*',
+                    paymentConfirm: 'Namaste *{name}* ji 🙏\n\n✅ *Payment Received!*\n\n*SG FITNESS EVOLUTION* mein aapka swaagat hai!\n\n💰 Amount: *₹{amount}*\n📅 Valid Till: *{expiry}*\n\nAapki membership active hai! 🎉\n\nGym mein milte hain! 🏋️\n\n_Stay Fit, Stay Strong!_ 💪',
+                    newAdmission: 'Namaste *{name}* ji 🙏\n\n🎉 *Welcome to SG FITNESS EVOLUTION!*\n\nAapne fitness ki taraf pehla kadam utha liya - Badhai ho!\n\n📋 *Details:*\n• Start: *{date}*\n• Valid Till: *{expiry}*\n• Paid: *₹{amount}*\n\nHum aapke fitness journey mein saath hain! 💪\n\nKoi bhi sawal ho, puchne mein bilkul mat jhijhakna! 😊\n\n_Transform Your Life!_ 🏆',
+                    birthdayWish: '🎂 *Happy Birthday {name} ji!* 🎉\n\n*SG FITNESS EVOLUTION* ki puri team aapko\n🌟 Janamdin ki hardik shubhkamnayein deti hai! 🌟\n\nIs saal aapko mile:\n✨ Achhi health\n💪 Strong body\n🏆 Sabhi goals ki prapti!\n\nAaj gym aaiye - Birthday surprise ka intezaar hai! 🎁\n\n_Have a wonderful day!_ 🥳'
                 };
             }
 
@@ -8892,7 +8988,20 @@ Thank you for choosing us! 💪
                 localStorage.setItem('messageSettings', JSON.stringify(saved));
                 this.autoSyncToCloud();
                 
-                this.showToast(`${config.title.replace(/[🔴⚠️💰✅🎉👤🎂]/g, '').trim()} saved!`, 'success');
+                // Update active message display
+                this.updateActiveMessageDisplay(config.title);
+                
+                this.showToast(`${config.title.replace(/[🔴⚠️💰✅🎉👤🎂]/g, '').trim()} saved & activated!`, 'success');
+            }
+            
+            // Update active message display
+            updateActiveMessageDisplay(title) {
+                const display = document.getElementById('activeMessageDisplay');
+                const nameSpan = document.getElementById('activeMessageName');
+                if (display && nameSpan) {
+                    display.style.display = 'block';
+                    nameSpan.textContent = title.replace(/[🔴⚠️💰✅🎉👤🎂]/g, '').trim();
+                }
             }
 
             // Reset current message to default
