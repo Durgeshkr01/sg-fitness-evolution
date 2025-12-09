@@ -7477,12 +7477,11 @@ Contact: ${gymPhone}`;
                 const member = this.members.find(m => m.id === this.paymentMemberId);
                 if (!member || !this.selectedPlanDays) return;
                 
-                // Calculate new expiry date
+                // Calculate new expiry date - ALWAYS extend from current expiry date
                 const currentExpiry = new Date(member.expiryDate);
-                const today = new Date();
                 
-                // If expired, extend from today; otherwise extend from current expiry
-                let baseDate = currentExpiry > today ? currentExpiry : today;
+                // Always extend from expiry date (not today)
+                let baseDate = currentExpiry;
                 const newExpiry = new Date(baseDate);
                 newExpiry.setDate(newExpiry.getDate() + this.selectedPlanDays);
                 
