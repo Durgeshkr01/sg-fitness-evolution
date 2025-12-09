@@ -6541,7 +6541,9 @@
                     this.showDuesClearedOptions(memberId, receiptMsg, payAmount);
                 } else {
                     // Partial payment - open WhatsApp directly
-                    const whatsappUrl = `https://wa.me/91${member.phone}?text=${encodeURIComponent(receiptMsg)}`;
+                    let cleanPhone = member.mobileNumber.replace(/\D/g, '');
+                    if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
+                    const whatsappUrl = `https://wa.me/91${cleanPhone}?text=${encodeURIComponent(receiptMsg)}`;
                     window.open(whatsappUrl, '_blank');
                     this.showToast(`✅ ₹${payAmount} dues paid! Remaining: ₹${member.dueAmount}`, 'success');
                 }
@@ -6604,7 +6606,7 @@
                     return;
                 }
                 
-                let cleanPhone = member.phone.replace(/\D/g, '');
+                let cleanPhone = member.mobileNumber.replace(/\D/g, '');
                 if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
                 
                 const clearedMsg = this.getFormattedMessage('duesCleared', { name: member.fullName });
@@ -6624,7 +6626,7 @@
                     return;
                 }
                 
-                let cleanPhone = member.phone.replace(/\D/g, '');
+                let cleanPhone = member.mobileNumber.replace(/\D/g, '');
                 if (cleanPhone.length > 10) cleanPhone = cleanPhone.slice(-10);
                 
                 const clearedMsg = this.getFormattedMessage('duesCleared', { name: member.fullName });
@@ -8447,27 +8449,23 @@ Contact: ${gymPhone}`;
                     return;
                 }
                 
-                const member = this.members.find(m => m.id === memberId);
+                // Convert memberId to number for comparison
+                const numericMemberId = typeof memberId === 'string' ? parseInt(memberId) : memberId;
+                const member = this.members.find(m => m.id === numericMemberId);
+                
                 if (member && member.paymentHistory) {
-                    const index = member.paymentHistory.findIndex(p => p.date === date && p.amount === amount);
+                    const index = member.paymentHistory.findIndex(p => p.date === date && p.amount == amount);
                     if (index !== -1) {
                         member.paymentHistory.splice(index, 1);
                         this.saveToLocalStorage();
-                        // Force immediate cloud sync
-                        if (this.cloudSyncEnabled && this.firebaseDB) {
-                            this.firebaseDB.ref('gymData').set({
-                                members: this.members,
-                                nextId: this.nextId,
-                                lastSync: new Date().toISOString()
-                            }).then(() => {
-                                console.log('Payment delete synced to cloud');
-                            }).catch(err => {
-                                console.error('Sync failed:', err);
-                            });
-                        }
+                        this.autoSyncToCloud(); // Use existing sync method
                         this.renderPaymentHistory();
-                        this.showToast('Payment deleted & synced!', 'success');
+                        this.showToast('Payment deleted successfully!', 'success');
+                    } else {
+                        this.showToast('Payment not found!', 'error');
                     }
+                } else {
+                    this.showToast('Member not found!', 'error');
                 }
             }
 
