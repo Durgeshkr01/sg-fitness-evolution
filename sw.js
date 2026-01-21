@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sg-fitness-evolution-v58';
+const CACHE_NAME = 'sg-fitness-evolution-v59';
 const urlsToCache = [
     './',
     './index.html',
